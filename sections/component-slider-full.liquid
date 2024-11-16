@@ -1,0 +1,49 @@
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<div class="container slider-full-cont">
+  <div class="slider-full-main">
+      <div class="swiper slider-full">
+        <div class="swiper-wrapper slider-full-wrapper">
+          <div class="swiper-slide slider-full-slide">Slide 1</div>
+          <div class="swiper-slide slider-full-slide">Slide 2</div>
+          <div class="swiper-slide slider-full-slide">Slide 3</div>
+          <div class="swiper-slide slider-full-slide">Slide 4</div>
+        </div>
+      </div>
+      <div class="slider-full-navigation">
+        <div class="slider-full-btn slider-full-prev">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.2925 16.7076L13.2925 25.7076C13.4801 25.8952 13.7346 26.0006 14 26.0006C14.2654 26.0006 14.5199 25.8952 14.7075 25.7076C14.8951 25.5199 15.0006 25.2654 15.0006 25.0001C15.0006 24.7347 14.8951 24.4802 14.7075 24.2926L7.41375 17.0001H27C27.2652 17.0001 27.5196 16.8947 27.7071 16.7072C27.8946 16.5196 28 16.2653 28 16.0001C28 15.7349 27.8946 15.4805 27.7071 15.293C27.5196 15.1054 27.2652 15.0001 27 15.0001H7.41375L14.7075 7.70757C14.8951 7.51993 15.0006 7.26543 15.0006 7.00007C15.0006 6.7347 14.8951 6.48021 14.7075 6.29257C14.5199 6.10493 14.2654 5.99951 14 5.99951C13.7346 5.99951 13.4801 6.10493 13.2925 6.29257L4.2925 15.2926C4.19952 15.3854 4.12576 15.4957 4.07544 15.6171C4.02512 15.7385 3.99921 15.8687 3.99921 16.0001C3.99921 16.1315 4.02512 16.2616 4.07544 16.383C4.12576 16.5044 4.19952 16.6147 4.2925 16.7076Z" fill="white"/>
+          </svg>
+
+        </div>
+        <div class="slider-full-btn slider-full-next">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M27.7075 16.7076L18.7075 25.7076C18.5199 25.8952 18.2654 26.0006 18 26.0006C17.7346 26.0006 17.4801 25.8952 17.2925 25.7076C17.1049 25.5199 16.9994 25.2654 16.9994 25.0001C16.9994 24.7347 17.1049 24.4802 17.2925 24.2926L24.5863 17.0001H5C4.73478 17.0001 4.48043 16.8947 4.29289 16.7072C4.10536 16.5196 4 16.2653 4 16.0001C4 15.7349 4.10536 15.4805 4.29289 15.293C4.48043 15.1054 4.73478 15.0001 5 15.0001H24.5863L17.2925 7.70757C17.1049 7.51993 16.9994 7.26543 16.9994 7.00007C16.9994 6.7347 17.1049 6.48021 17.2925 6.29257C17.4801 6.10493 17.7346 5.99951 18 5.99951C18.2654 5.99951 18.5199 6.10493 18.7075 6.29257L27.7075 15.2926C27.8005 15.3854 27.8742 15.4957 27.9246 15.6171C27.9749 15.7385 28.0008 15.8687 28.0008 16.0001C28.0008 16.1315 27.9749 16.2616 27.9246 16.383C27.8742 16.5044 27.8005 16.6147 27.7075 16.7076Z" fill="white"/>
+          </svg>
+
+        </div>
+      </div>
+      <div class="slider-full-pagination"></div>
+      <div class="slider-full-title">
+        <span>the 2045©️ pursuit jacket collection</span>
+      </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="{{ 'slider-full.js' | asset_url }}" defer></script>
+
+{% schema %}
+  {
+    "name": "Full Width Slider",
+    "tag": "section",
+    "class": "slider-full-section",
+    "settings": [
+      
+    ]
+  }
+  {% endschema %}

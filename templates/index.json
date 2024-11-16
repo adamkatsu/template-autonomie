@@ -1,0 +1,14 @@
+{
+  "sections": {
+      "home-hero": {
+        "type": "home-hero"
+      },
+      "slider-full": {
+        "type": "component-slider-full"
+      }
+  },
+  "order": [
+  "home-hero",
+  "slider-full"
+]
+}

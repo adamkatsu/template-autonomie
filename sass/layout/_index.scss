@@ -1,0 +1,13 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+@use "../components" as *;
+
+section {
+  width: 100%;
+  padding: 100px 40px;
+}
+.container {
+  width: 100%;
+  max-width: 1360px;
+  margin: auto;
+}
