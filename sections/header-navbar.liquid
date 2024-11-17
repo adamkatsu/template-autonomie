@@ -1,34 +1,37 @@
 <div class="container container-full navbar-cont">
-  <div class="navbar-left">
-    <ul class="navbar-menu">
-      <li class="navbar-menu-item txt-400 fs-14 cl-white">
-        <a href="#" id="nav-shop">Shop</a>
-      </li>
-      <li class="navbar-menu-item txt-400 fs-14 cl-white">
-        <a href="#">Brand</a>
-      </li>
-      <li class="navbar-menu-item txt-400 fs-14 cl-white">
-        <a href="#">Sale</a>
-      </li>
-    </ul>
-    <span class="navbar-menu-item txt-400 fs-14 cl-white">USD</span>
-  </div>
-  <div class="navbar-center">
-    <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/logo-white.png?v=1731811107" alt="" class="navbar-logo">
-  </div>
-  <div class="navbar-right">
-    <ul class="navbar-action">
-      <li class="navbar-action-item">
-        <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/user.svg?v=1731842813" alt="" class="icon-20">
-      </li>
-      <li class="navbar-action-item">
-        <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/search-normal.svg?v=1731842813" alt="" class="icon-20">
-      </li>
-      <li class="navbar-action-item">
-        <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/bag-2.svg?v=1731842813" alt="" class="icon-20">
-      </li>
-    </ul>
-  </div>
+  {% if template == 'index' %}
+    <div class="navbar-left">
+      <ul class="navbar-menu">
+        <li class="navbar-menu-item txt-400 fs-14 cl-white">
+          <a href="#" id="nav-shop">Shop</a>
+        </li>
+        <li class="navbar-menu-item txt-400 fs-14 cl-white">
+          <a href="#">Brand</a>
+        </li>
+        <li class="navbar-menu-item txt-400 fs-14 cl-white">
+          <a href="#">Sale</a>
+        </li>
+      </ul>
+      <span class="navbar-menu-item txt-400 fs-14 cl-white">USD</span>
+    </div>
+    <div class="navbar-center">
+      <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/logo-white.png?v=1731811107" alt="" class="navbar-logo">
+    </div>
+    <div class="navbar-right">
+      <ul class="navbar-action">
+        <li class="navbar-action-item">
+          <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/user.svg?v=1731842813" alt="" class="icon-20">
+        </li>
+        <li class="navbar-action-item">
+          <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/search-normal.svg?v=1731842813" alt="" class="icon-20">
+        </li>
+        <li class="navbar-action-item">
+          <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/bag-2.svg?v=1731842813" alt="" class="icon-20">
+        </li>
+      </ul>
+    </div>
+  {% endif %}
+  
   <div class="dropdown-left">
     <span class="dropdown-left-title">Shop</span>
     <ul class="dropdown-left-list">
