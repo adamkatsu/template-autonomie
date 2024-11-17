@@ -12,9 +12,15 @@
     {{ 'main.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
+
+  {%- sections 'header-group' -%}
+
     <main role="main">
       {{ content_for_layout }}
     </main>
+
+    {%- sections 'footer-group' -%}
     {{ 'main.js' | asset_url | script_tag }}
+
   </body>
 </html>

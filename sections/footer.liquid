@@ -1,0 +1,81 @@
+<div class="container footer-cont">
+  <div class="footer-top">
+    <div class="footer-newsletter">
+      <div class="footer-newsletter-head">
+        <span class="txt-500 fs-16 cl-white">Newsletter Sign Up</span>
+        <p class="txt-400 fs-16 cl-white">"Join the Nofake Inner Circle for exclusive updates, early access to new drops, and members-only offers."</p>
+      </div>
+      {% form 'customer' %}
+        <label for="email" class="newsletter-label">Subscribe to our newsletter</label>
+        <input 
+          type="email" 
+          name="email" 
+          id="email" 
+          class="newsletter-input" 
+          placeholder="Enter your email" 
+          required 
+        />
+        <button type="submit" class="newsletter-button">Subscribe</button>
+      {% endform %}
+    </div>
+    <div class="footer-links">
+      <div class="footer-links-list-wrapper">
+        <span class="txt-500 fs-16 cl-white">Platform</span>
+        <ul class="footer-links-list">
+          <li class="footer-links-item">
+            <a href="#">Terms of Use</a>
+          </li>
+          <li class="footer-links-item">
+            <a href="#">About</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-links-list-wrapper">
+        <span class="txt-500 fs-16 cl-white">Social</span>
+        <ul class="footer-links-list">
+          <li class="footer-links-item">
+            <a href="#">Instagram</a>
+          </li>
+          <li class="footer-links-item">
+            <a href="#">Twitter</a>
+          </li>
+          <li class="footer-links-item">
+            <a href="#">Facebook</a>
+          </li>
+          <li class="footer-links-item">
+            <a href="#">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-links-list-wrapper">
+        <span class="txt-500 fs-16 cl-white">Newsletter Sign Up</span>
+        <ul class="footer-links-list">
+          <li class="footer-links-item">
+            <a href="#">Podcasting</a>
+          </li>
+          <li class="footer-links-item">
+            <a href="#">Videography</a>
+          </li>
+          <li class="footer-links-item">
+            <a href="#">About Us</a>
+          </li>
+          <li class="footer-links-item">
+            <a href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom"></div>
+</div>
+
+{% schema %}
+  {
+    "name": "Home Hero Section",
+    "tag": "section",
+    "class": "footer",
+    "settings": [
+      
+    ]
+  }
+  {% endschema %}
