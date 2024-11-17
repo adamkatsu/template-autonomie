@@ -2,12 +2,29 @@
 @use "../base" as *;
 @use "../components" as *;
 
-section {
+.section {
   width: 100%;
-  padding: 100px 40px;
+  padding: 160px 24px;
+
+  &-full {
+    padding: 0 24px;
+    @include flex-box(row, center, center, 0px);
+
+    .container {
+      padding: 140px 0px;
+
+      &.no-padding {
+        padding: 0;
+      }
+    }
+  }
 }
 .container {
   width: 100%;
-  max-width: 1360px;
+  max-width: 1392px;
   margin: auto;
+
+  &-full {
+    max-width: 100%;
+  }
 }

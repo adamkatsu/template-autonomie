@@ -1,31 +1,37 @@
 @font-face {
-  font-family: "Aeonik";
-  src: url("assets/Aeonik-Light.ttf") format("ttf");
+  font-family: "Inter";
+  src: url("assets/Inter_18pt-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
-  font-family: "Aeonik";
-  src: url("assets/Aeonik-Regular.ttf") format("ttf");
+  font-family: "Inter";
+  src: url("assets/Inter_18pt-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Aeonik";
-  src: url("assets/Aeonik-Medium.ttf") format("ttf");
-  font-weight: 400;
+  font-family: "Inter";
+  src: url("assets/Inter_18pt-Medium.ttf") format("truetype");
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
-  font-family: "Aeonik";
-  src: url("assets/Aeonik-Bold.ttf") format("ttf");
+  font-family: "Inter";
+  src: url("assets/Inter_18pt-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("assets/Inter_18pt-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "Aeonik";
-  src: url("assets/Aeonik-Black.ttf") format("ttf");
-  font-weight: 800;
+  font-family: "Inter";
+  src: url("assets/Inter_18pt-Black.ttf") format("truetype");
+  font-weight: 900;
   font-style: normal;
 }
 * {
@@ -35,125 +41,249 @@
 }
 
 body {
-  background-color: #000000;
-  color: #ffffff;
-  font-family: "Aeonik", sans-serif;
+  background-color: #fff;
+  color: #111;
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 h1 {
-  font-size: 160px;
-  white-space: nowrap;
-  letter-spacing: -0.08em;
-  font-weight: 800;
-  line-height: 90%;
+  font-size: 41px;
+  font-weight: 500;
+  line-height: 120%;
 }
 
 p {
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.txt-400 {
+  font-weight: 400;
+}
+
+.txt-500 {
+  font-weight: 500;
+}
+
+.txt-600 {
+  font-weight: 600;
+}
+
+.txt-700 {
+  font-weight: 700;
+}
+
+.txt-900 {
+  font-weight: 900;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-16 {
   font-size: 16px;
-  line-height: 140%;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-32 {
+  font-size: 32px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+.fs-48 {
+  font-size: 48px;
+}
+
+.cl-white {
+  color: #ffffff;
+}
+
+.cl-white-50 {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .uppercase {
   text-transform: uppercase;
 }
 
-@media (max-width: 1280px) {
-  h1 {
-    font-size: 120px;
-    white-space: nowrap;
-  }
-}
 .btn-primary {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 10px;
-  padding: 24px 12px;
-  background-color: #000000;
-  border: 1px solid #ffffff;
+  padding: 14px;
+  background-color: #111111;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 14px;
 }
 
-.slider-full {
+.section {
   width: 100%;
-  height: 532px;
+  padding: 160px 24px;
 }
-.slider-full-section {
-  padding-top: 16px;
-}
-.slider-full-main {
-  position: relative;
-  width: 100%;
-  border: 1px solid #ffffff;
-}
-.slider-full-slide {
-  background-color: rgba(255, 255, 255, 0.2);
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  font-size: 32px;
-}
-.slider-full-navigation, .slider-full-pagination, .slider-full-title {
-  position: absolute;
-  z-index: 3;
-}
-.slider-full-navigation {
-  right: 32px;
-  bottom: 32px;
+.section-full {
+  padding: 0 24px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 0px;
 }
-.slider-full-pagination {
-  width: fit-content !important;
-  height: fit-content;
-  top: 32px !important;
-  right: 32px !important;
-  left: auto !important;
+.section-full .container {
+  padding: 140px 0px;
 }
-.slider-full-title {
-  bottom: 32px;
-  left: 32px;
-}
-.slider-full-btn {
-  padding: 16px;
-  aspect-ratio: 1;
-  border: 1px solid #fff;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: blur(15);
-}
-
-section {
-  width: 100%;
-  padding: 100px 40px;
+.section-full .container.no-padding {
+  padding: 0;
 }
 
 .container {
   width: 100%;
-  max-width: 1360px;
+  max-width: 1392px;
   margin: auto;
+}
+.container-full {
+  max-width: 100%;
+}
+
+.home-section-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+.home-section-title.items-center {
+  align-items: center;
+  text-align: center;
+}
+.home-section-title.align-bottom {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+.home-section-title.align-top {
+  margin-top: 0;
+  margin-bottom: auto;
+}
+
+.bg-full {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .home-hero {
-  padding-bottom: 16px;
+  width: 100vw;
+  position: relative;
 }
 .home-hero-cont {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  gap: 0;
-}
-.home-hero-top, .home-hero-bottom {
+  width: 100%;
+  height: 100vh;
+  max-width: 1158px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: stretch;
+  gap: 0;
+}
+
+.home-section-two {
+  width: 100vw;
+  position: relative;
+  padding: 0;
+}
+.home-section-two-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0;
+  height: 100vh;
+  max-height: 810px;
+}
+.home-section-two .home-section-half {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 32px;
+  gap: 0;
+}
+
+.home-section-three {
+  width: 100vw;
+  position: relative;
+}
+.home-section-three-cont {
+  width: 100%;
+  height: 100vh;
+  max-height: 810px;
+  max-width: 1158px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 0;
+}
+
+.home-section-four {
+  width: 100vw;
+  position: relative;
+  padding: 0;
+}
+.home-section-four .home-section-thirds {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0;
+  padding-bottom: 72px;
+}
+
+.home-section-five {
+  width: 100vw;
+  position: relative;
+}
+.home-section-five-cont {
+  width: 100%;
+  height: 100vh;
+  max-height: 810px;
+  max-width: 1158px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -3,12 +3,24 @@
       "home-hero": {
         "type": "home-hero"
       },
-      "slider-full": {
-        "type": "component-slider-full"
+      "home-section-two": {
+        "type": "home-section-two"
+      },
+      "home-section-three": {
+        "type": "home-section-three"
+      },
+      "home-section-four": {
+        "type": "home-section-four"
+      },
+      "home-section-five": {
+        "type": "home-section-five"
       }
   },
   "order": [
   "home-hero",
-  "slider-full"
-]
+  "home-section-two",
+  "home-section-three",
+  "home-section-four",
+  "home-section-five"
+  ]
 }

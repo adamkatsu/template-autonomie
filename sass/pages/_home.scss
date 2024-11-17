@@ -3,14 +3,103 @@
 @use "../components" as *;
 @use "../layout" as *;
 
-.home-hero {
-  padding-bottom: 16px;
-  
-  &-cont {
-    @include flex-box(column, flex-start, stretch, 0);
+.home-section-title {
+  @include flex-box(column, center, flex-start, 8px);
+  position: relative;
+  z-index: 2;
+
+  &.items-center {
+    align-items: center;
+    text-align: center;
   }
-  &-top,
-  &-bottom {
-    @include flex-box(row, space-between, center, 32px );
+  &.align-bottom {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+  &.align-top {
+    margin-top: 0;
+    margin-bottom: auto;
+  }
+}
+.bg-full{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
+.home-hero {
+  width: 100vw;
+  position: relative;
+
+  &-cont {
+    width: 100%;
+    height: 100vh;
+    max-width: 1158px;
+    @include flex-box(row, space-between, stretch, 0);
+  }
+}
+
+
+.home-section-two {
+  width: 100vw;
+  position: relative;
+  padding: 0;
+
+  &-cont {
+    @include flex-box(row, space-between, stretch, 0);
+    height: 100vh;
+    max-height: 810px;
+  }
+  .home-section-half {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    @include flex-box(column, center, center, 0);
+  }
+}
+
+.home-section-three {
+  width: 100vw;
+  position: relative;
+
+  &-cont {
+    width: 100%;
+    height: 100vh;
+    max-height: 810px;
+    max-width: 1158px;
+    @include flex-box(row, space-between, stretch, 0);
+  }
+}
+
+.home-section-four {
+  width: 100vw;
+  position: relative;
+  padding: 0;
+
+  .home-section-thirds {
+    position: relative;
+    flex: 1;
+    height: 100%;
+    @include flex-box(column, flex-end, center, 0);
+    padding-bottom: 72px;
+  }
+}
+
+.home-section-five {
+  width: 100vw;
+  position: relative;
+
+  &-cont {
+    width: 100%;
+    height: 100vh;
+    max-height: 810px;
+    max-width: 1158px;
+    @include flex-box(row, center, stretch, 0);
   }
 }
