@@ -2,9 +2,29 @@
   "sections": {
       "brand-hero": {
           "type": "brand-hero"
+      },
+      "brand-img-full": {
+        "type": "brand-img-full"
+      },
+      "body-copy": {
+        "type": "section-body-copy"
+      },
+      "brand-img-two": {
+        "type": "brand-img-two"
+      },
+      "body-copy-two": {
+        "type": "section-body-copy"
+      },
+      "section-blocks": {
+        "type": "section-blocks"
       }
   },
   "order": [
-  "brand-hero"
+    "brand-hero",
+    "brand-img-full",
+    "body-copy",
+    "brand-img-two",
+    "body-copy-two",
+    "section-blocks"
   ]
 }

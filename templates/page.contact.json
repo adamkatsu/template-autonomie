@@ -1,10 +1,10 @@
 {
   "sections": {
-      "home-hero": {
-          "type": "home-hero"
+      "contact": {
+          "type": "contact.liquid"
       }
   },
   "order": [
-  "home-hero"
+  "contact"
 ]
 }
