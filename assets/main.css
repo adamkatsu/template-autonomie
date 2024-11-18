@@ -125,13 +125,21 @@ a {
 .cl-white {
   color: #ffffff;
 }
-
 .cl-white-50 {
   color: rgba(255, 255, 255, 0.5);
 }
-
 .cl-white-60 {
   color: rgba(255, 255, 255, 0.6);
+}
+
+.cl-black {
+  color: #111111;
+}
+.cl-black-50 {
+  color: rgba(17, 17, 17, 0.5);
+}
+.cl-black-60 {
+  color: rgba(17, 17, 17, 0.6);
 }
 
 .uppercase {
