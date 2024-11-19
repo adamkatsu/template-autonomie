@@ -1,10 +1,10 @@
 <div class="container legal-cont">
   <div class="legal-head">
-    <h1 class="txt-500 fs-20 uppercase">{{ section.settings.page_title }}</h1>
-    <span class="txt-400 fs-14 cl-black-50">{{ section.settings.page_subtitle }}</span>
+    <h1 class="txt-500 fs-20 uppercase">{{ page.title }}</h1>
+    <span class="txt-400 fs-14 cl-black-50">{{ page.metafields.custom.page_subtitle }}</span>
   </div>
   <div class="legal-main">
-    {{ section.settings.paragraph | raw }}
+    {{ page.content }}
   </div>
 </div>
 
@@ -14,23 +14,6 @@
     "tag": "section",
     "class": "section legal",
     "settings": [
-      {
-        "type": "text",
-        "id": "page_title",
-        "label": "Page Title",
-        "default": "Legal Page"
-      },
-      {
-        "type": "textarea",
-        "id": "page_subtitle",
-        "label": "Page Subtitle",
-        "default": "PLEASE READ THESE TERMS OF SERVICES (“T&Cs”) CAREFULLY BEFORE USING OUR WEBSITE"
-      },
-      {
-        "type": "richtext",
-        "id": "paragraph",
-        "label": "Paragraph"
-      }
     ]
   }
 {% endschema %}
