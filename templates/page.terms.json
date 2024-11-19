@@ -1,0 +1,10 @@
+{
+  "sections": {
+      "legal": {
+          "type": "legal.liquid"
+      }
+  },
+  "order": [
+  "legal"
+]
+}

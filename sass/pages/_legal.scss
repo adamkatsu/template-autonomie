@@ -14,7 +14,7 @@
     text-align: center;
   }
   &-main {
-    @include flex-box(column, flex-start, flex-start, 8px);
+    @include flex-box(column, flex-start, flex-start, 16px);
 
     & > * {
       font-size: 18px;
