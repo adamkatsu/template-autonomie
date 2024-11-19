@@ -810,4 +810,32 @@ a {
   height: 135px;
 }
 
+.legal-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+}
+.legal-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  text-align: center;
+}
+.legal-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(17, 17, 17, 0.5);
+  line-height: 140%;
+  list-style: disc;
+}
+
 /*# sourceMappingURL=main.css.map */
