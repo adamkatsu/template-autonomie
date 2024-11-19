@@ -13,12 +13,11 @@
 
   &-cont {
     @include flex-box(row, space-between, center, 32px );
+    max-width: 100%;
+    position: relative;
 
     & > * {
       width: calc(33% - 16px);
-    }
-    &.navbar-white {
-      max-width: 1392px;
     }
   }
   &:has(.navbar-white) {
@@ -51,12 +50,12 @@
   width: 480px;
   height: 100vh;
   position: absolute;
-  top: 68px;
+  top: 53px;
   left: -100%;
   transition: all 1s ease;
 
   &.dropdown-active {
-    left: 0;
+    left: -24px;
     transition: all 1s ease;
   }
 
@@ -88,7 +87,7 @@
   background-color: #ffffff;
   color: #111111;
   position: absolute;
-  top: 68px;
+  top: 53px;
   right: -100%;
   transition: all 1s ease;
   @include flex-box(column, flex-start, stretch, 32px);
@@ -155,9 +154,11 @@
 }
 
 .announcement-bar {
-  padding: 10px 24px;
-  background-color: #111111;
+  
   &-cont {
+    max-width: 100%;
+    padding: 10px 24px;
+    background-color: #111111;
     @include flex-box(row, center, center, 0px);
   }
 }
