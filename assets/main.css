@@ -813,15 +813,16 @@ a {
 .legal-cont {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   gap: 32px;
+  max-width: 926px;
 }
 .legal-head {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
   gap: 16px;
   text-align: center;
 }
@@ -830,12 +831,17 @@ a {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 16px;
+  gap: 8px;
+}
+.legal-main > * {
   font-size: 18px;
   font-weight: 400;
   color: rgba(17, 17, 17, 0.5);
   line-height: 140%;
+}
+.legal-main li {
   list-style: disc;
+  margin-left: 24px;
 }
 
 /*# sourceMappingURL=main.css.map */
