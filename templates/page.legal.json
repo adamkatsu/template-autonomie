@@ -1,10 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-      "legal": {
-          "type": "legal.liquid"
+    "legal": {
+      "type": "legal",
+      "settings": {
+        "page_title": "Privacy Policy",
+        "page_subtitle": "Last updated: 16/3/2022",
+        "paragraph": "<p>We are an entity based in Dubai (\"we,\" \"us\", and \"our\") and appreciate and acknowledge that our customers, visitors and users (“you”, “your” and “yourself”) would be concerned about how we collect, use and share your information when you use/access our Website; www.auto-nomie.com, or use our services on the Website (“Services”), which includes but is not limited to the following:</p><p></p><ul><li>Using/ accessing/ interacting with the Website in any possible way;</li><li>Buying/ordering products on our Website;</li><li>Taking part in our promotions or registering to receive newsletters/ offers;Using our customer support options; and</li><li>Procuring a logistics company to deliver the purchased product(s) to you.</li></ul><p></p><p>This policy shall stipulate the type of information we may collect when you use our Services, and how we collect, use, share, and protect that information (“Privacy Policy”). Your information shall not be used or shared with anyone except as provided in this Privacy Policy.</p><p></p><p>This Privacy Policy only applies to the information that is collected through your access and/or usage of our Services. Information that you provide to or are collected by any third-party, such as other third-party service providers, whilst you use our Services is not covered by this Privacy Policy. We recommend that you refer to the privacy policy of such third party to ensure that your information is being collected and used by them in a safe and secure manner.</p><p></p><p>Please further note that this Privacy Policy may be changed or updated occasionally to meet the requirements and standards. Therefore, you are encouraged to frequently visit this Privacy Policy in order to be updated about any changes. Modifications to the Privacy Policy shall be effective on the day they are posted. Your continued use of the Services following the posting of changes to this Privacy Policy will constitute your consent and acceptance of those changes.</p><p></p><p>This Privacy Policy shall be read along our Terms and Conditions [Here].</p><p></p><p>Please read our Privacy Policy carefully before accessing our Website. </p>"
       }
+    }
   },
   "order": [
-  "legal"
-]
+    "legal"
+  ]
 }
