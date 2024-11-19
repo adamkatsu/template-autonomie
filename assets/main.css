@@ -203,6 +203,7 @@ a {
   width: 100%;
   z-index: 9;
   padding: 16px 24px;
+  color: #ffffff;
 }
 .navbar-cont {
   display: flex;
@@ -213,6 +214,15 @@ a {
 }
 .navbar-cont > * {
   width: calc(33% - 16px);
+}
+.navbar-cont.navbar-white {
+  max-width: 1392px;
+}
+.navbar:has(.navbar-white) {
+  position: relative;
+  background-color: #ffffff;
+  color: #111111;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.1);
 }
 .navbar-left, .navbar-menu {
   display: flex;
@@ -253,11 +263,11 @@ a {
   position: absolute;
   top: 68px;
   left: -100%;
-  transition: all 0.5s ease;
+  transition: all 1s ease;
 }
 .dropdown-left.dropdown-active {
   left: 0;
-  transition: all 0.5s ease;
+  transition: all 1s ease;
 }
 .dropdown-left-title {
   font-weight: 500;
@@ -290,7 +300,7 @@ a {
   position: absolute;
   top: 68px;
   right: -100%;
-  transition: all 0.5s ease;
+  transition: all 1s ease;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -299,7 +309,7 @@ a {
 }
 .dropdown-right.dropdown-active {
   right: 20px;
-  transition: all 0.5s ease;
+  transition: all 1s ease;
 }
 .dropdown-right .nav-search-wrapper {
   position: relative;
@@ -370,6 +380,18 @@ a {
 }
 .dropdown-right-list-item a {
   text-decoration: underline;
+}
+
+.announcement-bar {
+  padding: 10px 24px;
+  background-color: #111111;
+}
+.announcement-bar-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
 }
 
 .footer {
