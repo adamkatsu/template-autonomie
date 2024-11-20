@@ -889,6 +889,9 @@ a {
   border: none;
   outline: none;
 }
+.membership-form input::placeholder {
+  color: rgba(17, 17, 17, 0.5);
+}
 .membership-form .input-wrapper {
   width: 100%;
   position: relative;
@@ -899,7 +902,7 @@ a {
 }
 .membership-form .btn-form-submit {
   margin-top: 16px;
-  marign-bottom: 16px;
+  margin-bottom: 16px;
 }
 .membership-form .form-recover-pw {
   position: absolute;

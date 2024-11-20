@@ -35,6 +35,9 @@
         border: none;
         outline: none;
       }
+      &::placeholder {
+        color: rgba(17, 17, 17, 0.5);
+      }
     }
     .input-wrapper {
       width: 100%;
@@ -47,7 +50,7 @@
     }
     .btn-form-submit {
       margin-top: 16px;
-      marign-bottom: 16px;
+      margin-bottom: 16px;
     }
     .form-recover-pw {
       position: absolute;
