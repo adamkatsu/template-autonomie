@@ -1,11 +1,42 @@
-Hello World
+<div class="container membership-cont">
+  <div class="membership-head">
+    <h1 class="txt-500 fs-20 uppercase">Login</h1>
+    <span class="txt-400 fs-14 cl-black-50">Enter your email and password to login:</span>
+  </div>
+  <div class="membership-form">
+    {% form 'customer_login' %}
+
+      {{ form.errors | default_errors }}
+      
+      <div class="input-wrapper">
+        <label for="customer_email">Email Address</label>
+        <input type="email" name="customer[email]" placeholder="E-mail"/>
+      </div>
+      
+      <div class="input-wrapper">
+        <label for="customer_password">Password</label>
+        <input type="password" name="customer[password]" placeholder="Password"/>
+        <span class="txt-400 fs-14 cl-black underline txt-center form-recover-pw">Forget your password?</span>
+      </div>
+      
+      <input type="submit" value="Login" class="btn-primary btn-form-submit"/>
+      
+    {% endform %}
+
+    <span class="txt-400 fs-14 cl-black-50 txt-center">
+      Don't have an account? 
+      <a href="/register" class="cl-black underline">Sign up</a>
+    </span>
+  </div>
+</div>
+
 
 
 {% schema %}
   {
     "name": "Login Section",
     "tag": "section",
-    "class": "section login",
+    "class": "section membership",
     "settings": [
     ]
   }

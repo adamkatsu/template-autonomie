@@ -1,0 +1,60 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+@use "../components" as *;
+@use "../layout" as *;
+
+
+.membership {
+
+  &-cont {
+    @include flex-box(column, flex-start, center, 32px);
+    max-width: 460px;
+  }
+  &-head {
+    @include flex-box(column, flex-start, center, 16px);
+  }
+  &-form {
+    width: 100%;
+    @include flex-box(column, flex-start, stretch, 16px);
+
+    form {
+      @include flex-box(column, flex-start, stretch, 16px);
+    }
+    label {
+      display: none;
+    }
+    input {
+      padding: 14px;
+      width: 100%;
+      border: none;
+      font-size: 14px;
+      font-weight: 400;
+
+      &:focus,
+      &:active {
+        border: none;
+        outline: none;
+      }
+    }
+    .input-wrapper {
+      width: 100%;
+      position: relative;
+      border: 1px solid #e3e3e3;
+
+      input[type="password"] {
+        max-width: 280px;
+      }
+    }
+    .btn-form-submit {
+      margin-top: 16px;
+      marign-bottom: 16px;
+    }
+    .form-recover-pw {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+  }
+}
