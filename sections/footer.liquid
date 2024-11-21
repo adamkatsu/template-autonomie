@@ -5,38 +5,36 @@
         <span class="txt-500 fs-16 cl-white">Newsletter Sign Up</span>
         <p class="txt-400 fs-16 cl-white-60">"Join the Nofake Inner Circle for exclusive updates, early access to new drops, and members-only offers."</p>
       </div>
-      <div class="footer-form">
-        {% form 'customer' %}
-          {% if form.errors %}
-            <ul>
-              {% for field in form.errors %}
-                {% for message in field[1] %}
-                  <li>{{ message }}</li>
-                {% endfor %}
+      {% form 'customer', class: 'footer-form'%}
+        {% if form.errors %}
+          <ul>
+            {% for field in form.errors %}
+              {% for message in field[1] %}
+                <li>{{ message }}</li>
               {% endfor %}
-            </ul>
-          {% elsif form.posted_successfully? %}
-            <p>Thank you for subscribing!</p>
-          {% else %}
-          <div class="footer-form-input">
-            <input 
-              type="email" 
-              name="email" 
-              id="email" 
-              class="newsletter-input" 
-              placeholder="Email Address" 
-              required 
-            />
-            <button type="submit" class="newsletter-button">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14.4297 5.93005L20.4997 12.0001L14.4297 18.0701" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M3.5 12H20.33" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-          {% endif %}
-        {% endform %}
-      </div>
+            {% endfor %}
+          </ul>
+        {% elsif form.posted_successfully? %}
+          <p>Thank you for subscribing!</p>
+        {% else %}
+        <div class="footer-form-input">
+          <input 
+            type="email" 
+            name="email" 
+            id="email" 
+            class="newsletter-input" 
+            placeholder="Email Address" 
+            required 
+          />
+          <button type="submit" class="newsletter-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14.4297 5.93005L20.4997 12.0001L14.4297 18.0701" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3.5 12H20.33" stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        {% endif %}
+      {% endform %}
     </div>
     <div class="footer-links">
       <div class="footer-links-list-wrapper">

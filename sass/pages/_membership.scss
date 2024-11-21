@@ -9,6 +9,15 @@
   &-cont {
     @include flex-box(column, flex-start, center, 32px);
     max-width: 460px;
+    display: none;
+    opacity: 0;
+    transition: all .5s ease;
+
+    &.form-active {
+      display: flex;
+      opacity: 1;
+      transition: all .5s ease;
+    }
   }
   &-head {
     @include flex-box(column, flex-start, center, 16px);
