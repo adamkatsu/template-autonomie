@@ -250,6 +250,24 @@ a {
 .navbar-logo {
   height: 36px;
 }
+.navbar-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 68px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.navbar-overlay.show {
+  opacity: 1;
+  transition: all 0.5s ease;
+}
 
 .dropdown-left {
   padding: 48px 24px;
@@ -262,13 +280,13 @@ a {
   width: 480px;
   height: 100vh;
   position: absolute;
-  top: 53px;
+  top: 52px;
   left: -100%;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 .dropdown-left.dropdown-active {
   left: -24px;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 .dropdown-left-title {
   font-weight: 500;
@@ -299,9 +317,9 @@ a {
   background-color: #ffffff;
   color: #111111;
   position: absolute;
-  top: 53px;
+  top: 56px;
   right: -100%;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -310,7 +328,7 @@ a {
 }
 .dropdown-right.dropdown-active {
   right: 20px;
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 }
 .dropdown-right .nav-search-wrapper {
   position: relative;

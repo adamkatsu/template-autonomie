@@ -15,7 +15,9 @@
       <span class="navbar-menu-item txt-400 fs-14 cl-white">USD</span>
     </div>
     <div class="navbar-center">
-      <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/logo-white.png?v=1731811107" alt="" class="navbar-logo">
+      <a href="{{ routes.root_url }}">
+        <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/logo-white.png?v=1731811107" alt="" class="navbar-logo">
+      </a>
     </div>
     <div class="navbar-right">
       <ul class="navbar-action">
@@ -58,7 +60,9 @@
       <span class="navbar-menu-item txt-400 fs-14 cl-black">USD</span>
     </div>
     <div class="navbar-center">
-      <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/logo_black.png?v=1731811107" alt="" class="navbar-logo">
+      <a href="{{ routes.root_url }}">
+        <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/logo_black.png?v=1731811107" alt="" class="navbar-logo">
+      </a>
     </div>
     <div class="navbar-right">
       <ul class="navbar-action">
@@ -162,6 +166,8 @@
     </div>
   </div>
 </div>
+
+<div class="navbar-overlay"></div>
 
 <script src="{{ 'header.js' | asset_url }}"></script>
 
