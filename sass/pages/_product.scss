@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+@use "../components" as *;
+@use "../layout" as *;
+
+.product-main {
+  padding: 0px;
+  &-cont {
+    @include flex-box(row, space-between, flex-start, 0px);
+    max-width: 1920px;
+  }
+  &-gallery,
+  &-content {
+    width: 50%;
+  }
+  &-gallery {
+    @include flex-box(column, flex-start, stretch, 0px);
+    img {
+      max-width: 100%;
+    }
+  }
+  &-content {
+    padding: 120px 5vw;
+
+    @include flex-box(column, flex-start, stretch, 32px);
+
+    .product-title-wrapper {
+      @include flex-box(column, flex-start, flex-start, 16px);
+    }
+  }
+}

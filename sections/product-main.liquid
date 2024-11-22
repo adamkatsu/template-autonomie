@@ -1,0 +1,61 @@
+<div class="container product-main-cont">
+  <div class="product-main-gallery">
+    {% for image in product.images %}
+      <img src="{{ image | image_url: width: 1920 }}" alt="">
+    {% endfor %}
+  </div>
+  <div class="product-main-content">
+    
+    <div class="product-title-wrapper">
+      <h1 class="txt-500 fs-18 cl-black">{{ product.title |  escape }}</h1>
+      <span class="txt-400 fs-16 cl-black">{{ product.price | money }}</span>
+      <p class="txt-400 fs-12 cl-black-50">{{ product.description | strip_html }}</p>
+    </div>
+
+    {%  form 'product', product %} 
+      <div class="product-variant-wrapper">
+        <span>Size:</span>
+          {% for variant in product.variants %}
+            <div class="size-selector">
+              <label for="product-{{ variant.id }}">{{ variant.title }}</label>
+            </div>
+            <input type="radio" name="product-variant-{{ variant.id }}" id="product-variant-option{{ variant.id }}" value="{{ variant.id }}" {% if variant == product.variants.first %}selected{% endif %}>
+          {% endfor %}
+      </div>
+
+      <div class="product-quantity">
+        <button type="button" id="decrease-quantity">
+          <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 10.5H15.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <input type="number" id="quantity-input" name="quantity" value="1" min="1">
+        <button type="button" id="increase-quantity">
+          <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 10.5H15.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.5 15.5V5.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="product-accordion">
+        .
+      </div>
+
+      <button type="submit" class="add-to-cart-btn btn-primary">Add to Cart</button>
+    {% endform %}
+    
+  </div>
+</div>
+
+<script src="{{ "product-main.js" |  asset_url }}"></script>
+
+{% schema %}
+  {
+    "name": "Product Section",
+    "tag": "section",
+    "class": "section product-main",
+    "settings": [
+    ]
+  }
+{% endschema %}

@@ -949,4 +949,44 @@ a {
   cursor: pointer;
 }
 
+.product-main {
+  padding: 0px;
+}
+.product-main-cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0px;
+  max-width: 1920px;
+}
+.product-main-gallery, .product-main-content {
+  width: 50%;
+}
+.product-main-gallery {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0px;
+}
+.product-main-gallery img {
+  max-width: 100%;
+}
+.product-main-content {
+  padding: 120px 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 32px;
+}
+.product-main-content .product-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+}
+
 /*# sourceMappingURL=main.css.map */
