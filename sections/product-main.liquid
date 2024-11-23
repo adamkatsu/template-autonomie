@@ -13,6 +13,7 @@
     </div>
 
     {%  form 'product', product %} 
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
       <div class="product-variant">
 
         <div class="product-variant-size-head">
