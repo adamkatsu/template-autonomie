@@ -10,6 +10,7 @@
   z-index: 9;
   padding: 16px 24px;
   color: #ffffff;
+  // overflow: hidden;
 
   &-cont {
     @include flex-box(row, space-between, center, 32px );

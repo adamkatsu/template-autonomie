@@ -21,11 +21,124 @@
   }
   &-content {
     padding: 120px 5vw;
-
+    max-width: 720px;
+    margin: auto;
+    margin-top: 0;
+    position: sticky;
+    top: 0px;
     @include flex-box(column, flex-start, stretch, 32px);
 
     .product-title-wrapper {
       @include flex-box(column, flex-start, flex-start, 16px);
     }
+    form {
+      @include flex-box(column, flex-start, stretch, 32px);
+    }
+  }
+}
+
+
+.product-variant {
+  @include flex-box(column, flex-start, stretch, 16px);
+
+  &-size {
+    &-head {
+      @include flex-box(row, space-between, center, 32px);
+
+      button {
+        background-color: transparent;
+        border: none;
+      }
+    }
+    &-wrapper {
+      @include flex-box(row, flex-start, center, 8px);
+    }
+    &-item {
+      @include flex-box(row, center, center, 0);
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 120%;
+      color: #999999;
+      border: 1px solid #e3e3e3;
+      position: relative;
+
+      label {
+        padding: 14px;
+        cursor: pointer;
+      }
+      input {
+        position: absolute;
+        opacity: 0;
+      }
+      &:has(input:checked) {
+        color: #111111;
+        border: 1px solid #111111;
+      }
+    }
+  }
+}
+
+.product-quantity {
+  border: 1px solid #e3e3e3;
+  @include flex-box(row, flex-start, center, 0);
+  width: fit-content;
+
+  & > * {
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: #ffffff;
+  }
+  button {
+    @include flex-box(column, center, center, 0);
+    cursor: pointer;
+  }
+  input {
+    text-align: center;
+    font-weight: 500;
+    font-size: 14;
+    color: #111111;
+
+    &:focus,
+    &:active {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+.product-accordion {
+  @include flex-box(column, flex-start, stretch, 0);
+
+  &-item {
+    @include flex-box(column, flex-start, stretch, 0);
+    border-bottom: 1px solid #e3e3e3;
+
+    &.active .product-accordion-content {
+      margin-bottom: 16px;
+      transition: all 0.3s ease
+    }
+    & svg {
+      transform: rotate(0deg);
+      transition: all 0.3s ease
+    }
+    &.active svg {
+      transform: rotate(180deg);
+      transition: all 0.3s ease
+    }
+  }
+  &-head {
+    padding: 16px 0;
+    @include flex-box(row, space-between, center, 32px);
+  }
+  &-content {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 140%;
+    color: rgba(17, 17, 17, 0.5);
+    max-height: 0px;
+    overflow: hidden;
+    margin-bottom: 0px;
+    transition: all 0.3s ease;
   }
 }

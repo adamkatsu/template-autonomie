@@ -10,8 +10,18 @@ body {
   background-color: #fff;
   color: #111;
   font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
 }
 a {
   text-decoration: none;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

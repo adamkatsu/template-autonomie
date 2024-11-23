@@ -13,14 +13,27 @@
     </div>
 
     {%  form 'product', product %} 
-      <div class="product-variant-wrapper">
-        <span>Size:</span>
+      <div class="product-variant">
+
+        <div class="product-variant-size-head">
+          <span class="txt-400 fs-12 cl-black">Size:</span>
+          <button class="txt-400 fs-12 cl-black underline">Size Chart</button>
+        </div>
+
+        <div class="product-variant-size-wrapper">
           {% for variant in product.variants %}
-            <div class="size-selector">
-              <label for="product-{{ variant.id }}">{{ variant.title }}</label>
+            <div class="product-variant-size-item">
+              <label for="product-variant-option{{ variant.id }}">{{ variant.title }}</label>
+              <input 
+                type="radio" 
+                name="product-variant-size" 
+                id="product-variant-option{{ variant.id }}" 
+                value="{{ variant.id }}" 
+              >
             </div>
-            <input type="radio" name="product-variant-{{ variant.id }}" id="product-variant-option{{ variant.id }}" value="{{ variant.id }}" {% if variant == product.variants.first %}selected{% endif %}>
           {% endfor %}
+        </div>
+
       </div>
 
       <div class="product-quantity">
@@ -39,7 +52,45 @@
       </div>
 
       <div class="product-accordion">
-        .
+        <div class="product-accordion-item">
+          <div class="product-accordion-head">
+            <span class="txt-500 fs-14 cl-black">Details</span>
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.6199 5.7207L7.81655 9.52404C7.36738 9.9732 6.63238 9.9732 6.18322 9.52404L2.37988 5.7207" stroke="#111111" stroke-width="0.875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="product-accordion-content">
+            <p>
+              Your account will be charged at the time of delivery, except for DIY products where you will have to pay the full amount at the time of purchase.
+            </p>
+          </div>
+        </div>
+        <div class="product-accordion-item">
+          <div class="product-accordion-head">
+            <span class="txt-500 fs-14 cl-black">Care Guide</span>
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.6199 5.7207L7.81655 9.52404C7.36738 9.9732 6.63238 9.9732 6.18322 9.52404L2.37988 5.7207" stroke="#111111" stroke-width="0.875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="product-accordion-content">
+            <p>
+              Please refer to the size chart and note that all sizes are in <b>French sizing</b>. This item fits true to size; we recommend selecting your usual size. For care: dry clean only.
+            </p>
+          </div>
+        </div>
+        <div class="product-accordion-item">
+          <div class="product-accordion-head">
+            <span class="txt-500 fs-14 cl-black">Customization</span>
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.6199 5.7207L7.81655 9.52404C7.36738 9.9732 6.63238 9.9732 6.18322 9.52404L2.37988 5.7207" stroke="#111111" stroke-width="0.875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="product-accordion-content">
+            <p>
+              For color customizations, please <a href="{{ pages.contact.url}}" style="border-bottom: 1px solid #111111;">click here</a> to reach out.
+            </p>
+          </div>
+        </div>
       </div>
 
       <button type="submit" class="add-to-cart-btn btn-primary">Add to Cart</button>

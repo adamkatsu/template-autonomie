@@ -45,11 +45,22 @@ body {
   background-color: #fff;
   color: #111;
   font-family: "Inter", sans-serif;
-  overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 h1 {
@@ -975,6 +986,11 @@ a {
 }
 .product-main-content {
   padding: 120px 5vw;
+  max-width: 720px;
+  margin: auto;
+  margin-top: 0;
+  position: sticky;
+  top: 0px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -987,6 +1003,144 @@ a {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 16px;
+}
+.product-main-content form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 32px;
+}
+
+.product-variant {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 16px;
+}
+.product-variant-size-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+.product-variant-size-head button {
+  background-color: transparent;
+  border: none;
+}
+.product-variant-size-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+.product-variant-size-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 120%;
+  color: #999999;
+  border: 1px solid #e3e3e3;
+  position: relative;
+}
+.product-variant-size-item label {
+  padding: 14px;
+  cursor: pointer;
+}
+.product-variant-size-item input {
+  position: absolute;
+  opacity: 0;
+}
+.product-variant-size-item:has(input:checked) {
+  color: #111111;
+  border: 1px solid #111111;
+}
+
+.product-quantity {
+  border: 1px solid #e3e3e3;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0;
+  width: fit-content;
+}
+.product-quantity > * {
+  width: 45px;
+  height: 45px;
+  border: none;
+  background: #ffffff;
+}
+.product-quantity button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  cursor: pointer;
+}
+.product-quantity input {
+  text-align: center;
+  font-weight: 500;
+  font-size: 14;
+  color: #111111;
+}
+.product-quantity input:focus, .product-quantity input:active {
+  border: none;
+  outline: none;
+}
+
+.product-accordion {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
+}
+.product-accordion-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
+  border-bottom: 1px solid #e3e3e3;
+}
+.product-accordion-item.active .product-accordion-content {
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+.product-accordion-item svg {
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+.product-accordion-item.active svg {
+  transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
+.product-accordion-head {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+.product-accordion-content {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 140%;
+  color: rgba(17, 17, 17, 0.5);
+  max-height: 0px;
+  overflow: hidden;
+  margin-bottom: 0px;
+  transition: all 0.3s ease;
 }
 
 /*# sourceMappingURL=main.css.map */
