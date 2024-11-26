@@ -1,0 +1,62 @@
+<div class="container cart-cont">
+  <div class="cart-head">
+    <h1 class="uppercase">Basket</h1>
+  </div>
+  <div class="cart-content">
+    {% form 'cart', cart %}
+      {% if cart.empty? %}
+        <h2>Cart is empty</h2>
+      {% else %}
+        {% for item in cart.items %}
+          <img
+            width="200"
+            height="200"
+            loading="lazy"
+            src="{{ item.image | image_url}}"
+          >
+          <h2>{{ item.product.title }}</h2>
+          <p>{{ item.product.selected_or_first_available_variant.title }}</p>
+          <p>{{ item.final_price | money}}</p>
+          <p>{{ item.final_line_price | money }}</p>
+          <a href="{{ item.url_to_remove }}" class="underline">remove</a>
+
+          <div class="product-quantity">
+            <button type="button" id="decrease-quantity">
+              <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.5 10.5H15.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <input name="updates[]" value="{{ item.quantity }}">
+            <button type="button" id="increase-quantity">
+              <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.5 10.5H15.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10.5 15.5V5.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+
+          <hr>
+        {% endfor %}
+        <p>Total: {{ cart.total_price | money }}</p>
+        <button type="submit" name="update">update</button>
+
+        <button type="submit" name="checkout">Checkout</button>
+      {% endif %}
+      <div class="cart-main">
+      </div>
+      <div class="cart-summary">
+      </div>
+    {% endform %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Cart Section",
+    "tag": "section",
+    "class": "section cart",
+    "settings": [
+      
+    ]
+  }
+  {% endschema %}
