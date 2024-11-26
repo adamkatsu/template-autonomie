@@ -1,0 +1,55 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+@use "../components" as *;
+@use "../layout" as *;
+
+.cart {
+  width: 100%;
+  &-cont {
+    @include flex-box(column, flex-start, stretch, 32px);
+    width: 100%;
+  }
+  &-content {
+    @include flex-box(row, space-between, flex-start, 32px);
+    width: 100%;
+  }
+  &-main {
+    @include flex-box(column, flex-start, stretch, 24px);
+    width: 100%;
+  }
+  &-block {
+    @include flex-box(row, flex-start, center, 0px);
+
+    &.head {
+
+      & > * {
+        padding: 16px;
+      }
+      border-bottom: 1px solid #e3e3e3;
+    }
+
+    &-title {
+      width: 55%;
+      @include flex-box(row, flex-start, center, 16px);
+
+      img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+    &-quantity {
+      width: 35%
+    }
+    &-total {
+      width: 10%;
+    }
+    &-details {
+      @include flex-box(column, flex-start, flex-start, 16px);
+    }
+  }
+  &-summary {
+    width: 460px;
+    flex-shrink: 0;
+  }
+}
