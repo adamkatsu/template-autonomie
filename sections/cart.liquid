@@ -31,13 +31,13 @@
               </div>
               <div class="cart-block-quantity">
                 <div class="product-quantity">
-                  <button type="button" class="decrement" id="decrease-quantity">
+                  <button type="button" class="decrement" id="decrease-quantity" data-key="{{ item.key }}">
                     <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5.5 10.5H15.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </button>
-                  <input name="updates[]" value="{{ item.quantity }}">
-                  <button type="button" class="increment" id="increase-quantity">
+                  <input class="quantity-input" name="updates[{{ item.key }}]" value="{{ item.quantity }}">
+                  <button type="button" class="increment" id="increase-quantity" data-key="{{ item.key }}">
                     <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M5.5 10.5H15.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
                       <path d="M10.5 15.5V5.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -76,6 +76,7 @@
             </div>
             <p class="txt-400 fs-12 cl-black-50">Your account will be charged at the time of delivery, except for DIY products where you will have to pay the full amount at the time of purchase.</p>
           </div>
+          <button type="submit" class="btn-primary" style="display: none;">Update Cart</button>
           <button type="submit" name="checkout" class="btn-primary">Checkout</button>
         </div>
       {% endif %}
@@ -94,6 +95,13 @@
         const currentValue = parseInt(input.value, 10) || 1;
         if (currentValue > 1) {
           input.value = currentValue - 1;
+          input.dispatchEvent(new Event("input")); // Trigger the input event
+        }
+        for (const dec of decrementButtons) {
+          dec.style.pointerEvents = 'none'
+        }
+        for (const inc of incrementButtons) {
+          inc.style.pointerEvents = 'none'
         }
       });
     });
@@ -103,6 +111,21 @@
         const input = this.previousElementSibling;
         const currentValue = parseInt(input.value, 10) || 1;
         input.value = currentValue + 1;
+        input.dispatchEvent(new Event("input")); // Trigger the input event
+        for (const dec of decrementButtons) {
+          dec.style.pointerEvents = 'none'
+        }
+        for (const inc of incrementButtons) {
+          inc.style.pointerEvents = 'none'
+        }
+      });
+    });
+
+    document.querySelectorAll(".product-quantity input").forEach(input => {
+      console.log(input)
+      input.addEventListener("input", function () {
+        console.log('quantity changed');
+        this.closest("form").submit();
       });
     });
   });
