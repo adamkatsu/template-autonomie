@@ -1,4 +1,4 @@
-<div class="container container-full collection-cont">
+<div class="container collection-cont">
   <div class="collection-head">
     <div class="collection-title">
       <h1>{{ collection.title }}</h1>
@@ -31,11 +31,20 @@
   <div class="collection-main">
     {% for product in collection.products %}
       <div class="collection-product">
+        <a href="{{ product.url }}" class="collection-product-anchor">
+          <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.5 10.5H15.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.5 15.5V5.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+
+        </a>
+          
         <img src="{{ product.featured_image |  image_url: width: 320 }}" alt="">
+
         <div class="collection-product-details">
           <div class="collection-product-title">
-            <span>{{ product.title }}</span>
-            <span>{{ product.price | money }}</span>
+            <span class="txt-500 fs-16 cl-black">{{ product.title }}</span>
+            <span class="txt-400 fs-16 cl-black-50">{{ product.price | money }}</span>
           </div>
 
          <!-- Variants -->
@@ -49,12 +58,13 @@
             {% endfor %}
           </div>
         </div>
+
       </div>
     {% endfor %}
   </div>
 </div>
 
-<script src="{{ collection.js |  asset_url }}"></script>
+<script src="{{ "collection.js" |  asset_url }}"></script>
 
 {% schema %}
   {
