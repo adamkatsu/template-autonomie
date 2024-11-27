@@ -1,0 +1,68 @@
+<div class="container container-full collection-cont">
+  <div class="collection-head">
+    <div class="collection-title">
+      <h1>{{ collection.title }}</h1>
+    </div>
+    <div class="collection-amount">
+      <span class="txt-500 fs-14 cl-black-50 uppercase">({{ collection.products_count }} Products)</span>
+    </div>
+    <div class="collection-filter">
+      <button class="btn-filter-trigger">
+        Filter
+        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.5 7.5H10.5" stroke="#111111" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7 11V4" stroke="#292D32" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="btn-filter-trigger collection-availability">
+        <span>Availability</span>
+        <div class="switch">
+          <div class="switch-toggle"></div>
+        </div>
+      </button>
+      <button class="btn-filter-trigger">
+        Sort By
+        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11.6199 5.7207L7.81655 9.52404C7.36738 9.9732 6.63238 9.9732 6.18322 9.52404L2.37988 5.7207" stroke="#111111" stroke-width="0.875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="collection-main">
+    {% for product in collection.products %}
+      <div class="collection-product">
+        <img src="{{ product.featured_image |  image_url: width: 320 }}" alt="">
+        <div class="collection-product-details">
+          <div class="collection-product-title">
+            <span>{{ product.title }}</span>
+            <span>{{ product.price | money }}</span>
+          </div>
+
+         <!-- Variants -->
+          <div class="collection-product-variant">
+            {% for variant in product.variants %}
+              <button 
+                class="variant-button" 
+                data-variant-id="{{ variant.id }}">
+                {{ variant.title }}
+              </button>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script src="{{ collection.js |  asset_url }}"></script>
+
+{% schema %}
+  {
+    "name": "Collection Section",
+    "tag": "section",
+    "class": "section collection",
+    "settings": [
+      
+    ]
+  }
+  {% endschema %}

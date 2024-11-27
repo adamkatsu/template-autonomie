@@ -1,10 +1,10 @@
 {
   "sections": {
-      "home-hero": {
-          "type": "home-hero"
+      "collection": {
+          "type": "collection"
       }
   },
   "order": [
-  "home-hero"
-]
+    "collection"
+  ]
 }

@@ -1,0 +1,35 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+@use "../components" as *;
+@use "../layout" as *;
+
+
+.collection {
+
+  &-cont {
+    @include flex-box(column, flex-start, stretch, 0px);
+  }
+  &-head {
+    @include flex-box(row, space-between, center, 0px);
+    border-bottom: 1px solid #e3e3e3;
+  }
+  &-title,
+  &-amount,
+  &-filter {
+    width: 33%;
+  }
+  &-filter {
+    @include flex-box(row, flex-end, center, 0px);
+
+    .btn-filter-trigger {
+      @include flex-box(row, center, center, 8px);
+      padding: 16px;
+      background-color: transparent;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 120%;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
