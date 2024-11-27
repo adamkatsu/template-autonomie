@@ -49,6 +49,15 @@
       right: 8px;
       padding: 12px;
       background-color: #ffffff;
+      
+      svg {
+        transform: rotate(0deg);
+        transition: all .3s ease;
+      }
+      &:hover svg {
+        transform: rotate(90deg);
+        transition: all .4s ease;
+      }
     }
     img {
       position: absolute;

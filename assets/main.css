@@ -1327,6 +1327,14 @@ a {
   padding: 12px;
   background-color: #ffffff;
 }
+.collection-product-anchor svg {
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+.collection-product-anchor:hover svg {
+  transform: rotate(90deg);
+  transition: all 0.4s ease;
+}
 .collection-product img {
   position: absolute;
   top: 0;
