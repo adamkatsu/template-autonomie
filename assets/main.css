@@ -245,7 +245,7 @@ a {
   width: calc(33% - 16px);
 }
 .navbar:has(.navbar-white) {
-  position: relative;
+  position: fixed;
   background-color: #ffffff;
   color: #111111;
   border-bottom: 1px solid rgba(17, 17, 17, 0.1);
@@ -264,6 +264,9 @@ a {
   align-items: center;
   gap: 24px;
 }
+.navbar-action-item {
+  cursor: pointer;
+}
 .navbar-center {
   margin: auto;
   display: flex;
@@ -279,7 +282,7 @@ a {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  top: 68px;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -291,7 +294,11 @@ a {
 }
 .navbar-overlay.show {
   opacity: 1;
+  pointer-events: auto;
   transition: all 0.5s ease;
+}
+.navbar-overlay.show-transparent {
+  pointer-events: auto;
 }
 
 .dropdown-left {
@@ -305,13 +312,14 @@ a {
   width: 480px;
   height: 100vh;
   position: absolute;
-  top: 52px;
+  top: 72px;
   left: -100%;
   transition: all 0.5s ease;
 }
 .dropdown-left.dropdown-active {
-  left: -24px;
+  left: 0;
   transition: all 0.5s ease;
+  z-index: 3;
 }
 .dropdown-left-title {
   font-weight: 500;
@@ -342,7 +350,7 @@ a {
   background-color: #ffffff;
   color: #111111;
   position: absolute;
-  top: 56px;
+  top: 72px;
   right: -100%;
   transition: all 0.5s ease;
   display: flex;
@@ -354,6 +362,7 @@ a {
 .dropdown-right.dropdown-active {
   right: 20px;
   transition: all 0.5s ease;
+  z-index: 3;
 }
 .dropdown-right .nav-search-wrapper {
   position: relative;

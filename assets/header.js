@@ -8,20 +8,30 @@ const cartTrigger = document.getElementById('nav-cart');
 const userTrigger = document.getElementById('nav-user');
 
 const navOverlay = document.querySelector('.navbar-overlay');
+const navbarCont = document.querySelector('.navbar-cont');
 
 shopTrigger.addEventListener('mouseenter', () => {
   shopMenu.classList.add('dropdown-active');
   navOverlay.classList.add('show');
+  navbarCont.style.zIndex = 999;
 })
-shopMenu.addEventListener('mouseleave', () => {
+// shopMenu.addEventListener('mouseleave', () => {
+//   shopMenu.classList.remove('dropdown-active');
+//   navOverlay.classList.remove('show');
+// })
+searchTrigger.addEventListener('click', () => {
+  searchMenu.classList.add('dropdown-active');
+  navOverlay.classList.add('show-transparent');
+  navbarCont.style.zIndex = 999;
+})
+// searchMenu.addEventListener('mouseleave', () => {
+//   searchMenu.classList.remove('dropdown-active');
+//   navOverlay.classList.remove('show');
+// })
+navOverlay.addEventListener('click', () => {
   shopMenu.classList.remove('dropdown-active');
   navOverlay.classList.remove('show');
-})
-searchTrigger.addEventListener('mouseenter', () => {
-  searchMenu.classList.add('dropdown-active');
-  navOverlay.classList.add('show');
-})
-searchMenu.addEventListener('mouseleave', () => {
+  navOverlay.classList.remove('show-transparent');
   searchMenu.classList.remove('dropdown-active');
-  navOverlay.classList.remove('show');
+  navbarCont.style.zIndex = 9;
 })
