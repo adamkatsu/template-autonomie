@@ -20,7 +20,12 @@
     },
     "home-section-two": {
       "type": "home-section-two",
-      "settings": {}
+      "settings": {
+        "product_one": "at-heart-top",
+        "product_one_text": "Lorem Ipsum",
+        "product_two": "dolor-sit-amet",
+        "product_two_text": "Lorem Ipsum"
+      }
     },
     "home-section-three": {
       "type": "home-section-three",
