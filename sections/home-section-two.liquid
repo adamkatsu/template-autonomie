@@ -1,32 +1,32 @@
 <div class="container container-full home-section-two-cont no-padding">
-  <a href="#" class="home-section-half">
+  <div href="#" class="home-section-half">
     <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/home_2_1.webp?v=1731811475" alt="" class="bg-full">
     <div class="home-section-half-wrapper">
-      <div class="home-section-title">
+      <div class="home-section-title items-center">
         {% if section.settings.product_one %}
           {% assign product_one = all_products[section.settings.product_one] %}
-          <a href="{{ product_one.url }}" class="home-btn items-center">
+          <a href="{{ product_one.url }}" class="home-btn">
             <span class="txt-400 fs-14 cl-white-50 uppercase">{{ section.settings.product_one_text }}</span>
             <span class="txt-500 fs-20 cl-white">{{ product_one.title }}</span>
           </a>
         {% endif %}
       </div>
     </div>
-  </a>
-  <a href="#" class="home-section-half">
+  </div>
+  <div href="#" class="home-section-half">
     <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/home_2_2.webp?v=1731811474" alt="" class="bg-full">
     <div class="home-section-half-wrapper">
       <div class="home-section-title items-center">
         {% if section.settings.product_two %}
           {% assign product_two = all_products[section.settings.product_two] %}
-          <a href="{{ product_two.url }}" class="home-btn items-center">
+          <a href="{{ product_two.url }}" class="home-btn">
             <span class="txt-400 fs-14 cl-white-50 uppercase">{{ section.settings.product_two_text }}</span>
             <span class="txt-500 fs-20 cl-white">{{ product_two.title }}</span>
           </a>
         {% endif %}
       </div>
     </div>
-  </a>
+  </div>
 </div>
 
 {% schema %}
