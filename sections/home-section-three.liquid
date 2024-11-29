@@ -1,12 +1,22 @@
 <div class="container container-full home-section-three-cont">
   <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/home_3.webp?v=1731811476" alt="" class="bg-full">
   <div class="home-section-title align-bottom">
-    <span class="txt-400 .fs-14 cl-white-50 uppercase">Lorem Ipsum</span>
-    <span class="txt-500 fs-20 cl-white">Sunkissed Midi Dress Ombre</span>
+    {% if section.settings.product_one %}
+      {% assign product_one = all_products[section.settings.product_one] %}
+      <a href="{{ product_one.url }}" class="home-btn align-bottom">
+        <span class="txt-400 fs-14 cl-white-50 uppercase">{{ section.settings.product_one_text }}</span>
+        <span class="txt-500 fs-20 cl-white">{{ product_one.title }}</span>
+      </a>
+    {% endif %}
   </div>
   <div class="home-section-title align-top">
-    <span class="txt-400 .fs-14 cl-white-50 uppercase">Lorem Ipsum</span>
-    <span class="txt-500 fs-20 cl-white">Sunkissed Midi Dress Ombre</span>
+    {% if section.settings.product_two %}
+      {% assign product_two = all_products[section.settings.product_two] %}
+      <a href="{{ product_two.url }}" class="home-btn align-top">
+        <span class="txt-400 fs-14 cl-white-50 uppercase">{{ section.settings.product_two_text }}</span>
+        <span class="txt-500 fs-20 cl-white">{{ product_two.title }}</span>
+      </a>
+    {% endif %}
   </div>
 </div>
 
@@ -16,7 +26,28 @@
     "tag": "section",
     "class": "home-section-three section-full",
     "settings": [
-      
+      {
+        "type": "product",
+        "id": "product_one",
+        "label": "Product One"
+      },
+      {
+        "type": "text",
+        "id": "product_one_text",
+        "label": "Product One Title",
+        "default": "Lorem Ipsum"
+      },
+      {
+        "type": "product",
+        "id": "product_two",
+        "label": "Product Two"
+      },
+      {
+        "type": "text",
+        "id": "product_two_text",
+        "label": "Product Two Title",
+        "default": "Lorem Ipsum"
+      }
     ],
     "blocks": [
     ]

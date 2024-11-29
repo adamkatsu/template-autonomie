@@ -575,11 +575,11 @@ a {
   align-items: center;
   text-align: center;
 }
-.home-section-title.align-bottom {
+.home-section-title .align-bottom {
   margin-top: auto;
   margin-bottom: 0;
 }
-.home-section-title.align-top {
+.home-section-title .align-top {
   margin-top: 0;
   margin-bottom: auto;
 }
