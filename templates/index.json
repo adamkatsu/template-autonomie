@@ -12,6 +12,7 @@
     "home-hero": {
       "type": "home-hero",
       "settings": {
+        "background_image": "shopify://shop_images/home_1.webp",
         "product_one": "at-heart-top",
         "product_one_text": "Product One",
         "product_two": "dolor-sit-amet",
@@ -21,8 +22,10 @@
     "home-section-two": {
       "type": "home-section-two",
       "settings": {
+        "background_image_one": "shopify://shop_images/home_2_1.webp",
         "product_one": "at-heart-top",
         "product_one_text": "Product Left",
+        "background_image_two": "shopify://shop_images/home_2_2.webp",
         "product_two": "dolor-sit-amet",
         "product_two_text": "Product Right"
       }
@@ -30,6 +33,7 @@
     "home-section-three": {
       "type": "home-section-three",
       "settings": {
+        "background_image": "shopify://shop_images/home_3.webp",
         "product_one": "at-heart-top",
         "product_one_text": "Lorem Ipsum",
         "product_two": "placeholder-product",
@@ -39,10 +43,13 @@
     "home-section-four": {
       "type": "home-section-four",
       "settings": {
+        "background_image_one": "shopify://shop_images/about_2_2.webp",
         "product_one": "at-heart-top",
         "product_one_text": "Lorem Ipsum",
+        "background_image_two": "shopify://shop_images/about_3.webp",
         "product_two": "placeholder-product",
         "product_two_text": "Lorem Ipsum",
+        "background_image_three": "shopify://shop_images/about_4.webp",
         "product_three": "dolor-sit-amet",
         "product_three_text": "Lorem Ipsum"
       }
@@ -50,6 +57,7 @@
     "home-section-five": {
       "type": "home-section-five",
       "settings": {
+        "background_image": "shopify://shop_images/home_4.webp",
         "product_one": "at-heart-top",
         "product_one_text": "Lorem Ipsum"
       }
