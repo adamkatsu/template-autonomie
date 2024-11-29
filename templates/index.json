@@ -1,26 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
-      "home-hero": {
-        "type": "home-hero"
-      },
-      "home-section-two": {
-        "type": "home-section-two"
-      },
-      "home-section-three": {
-        "type": "home-section-three"
-      },
-      "home-section-four": {
-        "type": "home-section-four"
-      },
-      "home-section-five": {
-        "type": "home-section-five"
+    "home-hero": {
+      "type": "home-hero",
+      "settings": {
+        "product_one": "at-heart-top",
+        "product_one_text": "Product One",
+        "product_two": "dolor-sit-amet",
+        "product_two_text": "Product Two"
       }
+    },
+    "home-section-two": {
+      "type": "home-section-two",
+      "settings": {}
+    },
+    "home-section-three": {
+      "type": "home-section-three",
+      "settings": {}
+    },
+    "home-section-four": {
+      "type": "home-section-four",
+      "settings": {}
+    },
+    "home-section-five": {
+      "type": "home-section-five",
+      "settings": {}
+    }
   },
   "order": [
-  "home-hero",
-  "home-section-two",
-  "home-section-three",
-  "home-section-four",
-  "home-section-five"
+    "home-hero",
+    "home-section-two",
+    "home-section-three",
+    "home-section-four",
+    "home-section-five"
   ]
 }
