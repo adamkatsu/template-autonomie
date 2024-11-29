@@ -29,15 +29,30 @@
     },
     "home-section-three": {
       "type": "home-section-three",
-      "settings": {}
+      "settings": {
+        "product_one": "at-heart-top",
+        "product_one_text": "Lorem Ipsum",
+        "product_two": "placeholder-product",
+        "product_two_text": "Product Two"
+      }
     },
     "home-section-four": {
       "type": "home-section-four",
-      "settings": {}
+      "settings": {
+        "product_one": "at-heart-top",
+        "product_one_text": "Lorem Ipsum",
+        "product_two": "placeholder-product",
+        "product_two_text": "Lorem Ipsum",
+        "product_three": "dolor-sit-amet",
+        "product_three_text": "Lorem Ipsum"
+      }
     },
     "home-section-five": {
       "type": "home-section-five",
-      "settings": {}
+      "settings": {
+        "product_one": "at-heart-top",
+        "product_one_text": "Lorem Ipsum"
+      }
     }
   },
   "order": [
