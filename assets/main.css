@@ -596,17 +596,20 @@ a {
   width: 100%;
   transition: all 0.2s ease-out;
 }
-.home-section-title .home-btn .items-center {
+.home-section-title .home-btn.items-center {
   align-items: center;
   text-align: center;
 }
-.home-section-title .home-btn .align-bottom {
+.home-section-title .home-btn.align-bottom {
   margin-top: auto;
   margin-bottom: 0;
 }
-.home-section-title .home-btn .align-top {
+.home-section-title .home-btn.align-top {
   margin-top: 0;
   margin-bottom: auto;
+}
+.home-section-title .home-btn.align-right {
+  align-items: flex-end;
 }
 
 .items-center {

@@ -1,6 +1,6 @@
 <div class="container container-full home-section-two-cont no-padding">
   <div href="#" class="home-section-half">
-    <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/home_2_1.webp?v=1731811475" alt="" class="bg-full">
+    <img src="{{ section.settings.background_image_one |  image_url: width: 1920 }}" alt="" class="bg-full">
     <div class="home-section-half-wrapper">
       <div class="home-section-title items-center">
         {% if section.settings.product_one %}
@@ -14,7 +14,7 @@
     </div>
   </div>
   <div href="#" class="home-section-half">
-    <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/home_2_2.webp?v=1731811474" alt="" class="bg-full">
+    <img src="{{ section.settings.background_image_two |  image_url: width: 1920 }}" alt="" class="bg-full">
     <div class="home-section-half-wrapper">
       <div class="home-section-title items-center">
         {% if section.settings.product_two %}
@@ -36,6 +36,11 @@
     "class": "home-section-two section-full",
     "settings": [
       {
+        "type": "image_picker",
+        "id": "background_image_one",
+        "label": "Background Image One"
+      },
+      {
         "type": "product",
         "id": "product_one",
         "label": "Product One"
@@ -45,6 +50,11 @@
         "id": "product_one_text",
         "label": "Product One Title",
         "default": "Lorem Ipsum"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_image_two",
+        "label": "Background Image Two"
       },
       {
         "type": "product",

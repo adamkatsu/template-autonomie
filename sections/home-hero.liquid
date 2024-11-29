@@ -1,5 +1,5 @@
 <div class="container container-full home-hero-cont">
-  <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/home_1.webp?v=1731811475" alt="" class="bg-full">
+  <img src="{{ section.settings.background_image |  image_url: width: 1920 }}" alt="" class="bg-full">
   <div class="home-section-title">
     {% if section.settings.product_one %}
       {% assign product_one = all_products[section.settings.product_one] %}
@@ -12,7 +12,7 @@
   <div class="home-section-title">
     {% if section.settings.product_two %}
       {% assign product_two = all_products[section.settings.product_two] %}
-      <a href="{{ product_two.url }}" class="home-btn">
+      <a href="{{ product_two.url }}" class="home-btn align-right">
         <span class="txt-400 fs-14 cl-white-50 uppercase">{{ section.settings.product_two_text }}</span>
         <span class="txt-500 fs-20 cl-white">{{ product_two.title }}</span>
       </a>
@@ -26,6 +26,11 @@
   "tag": "section",
   "class": "home-hero section-full",
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
     {
       "type": "product",
       "id": "product_one",

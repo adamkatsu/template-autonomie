@@ -29,17 +29,20 @@
       width: 100%;
       transition: all .2s ease-out;
     }
-    .items-center {
+    &.items-center {
       align-items: center;
       text-align: center;
     }
-    .align-bottom {
+    &.align-bottom {
       margin-top: auto;
       margin-bottom: 0;
     }
-    .align-top {
+    &.align-top {
       margin-top: 0;
       margin-bottom: auto;
+    }
+    &.align-right {
+      align-items: flex-end;
     }
   }
 }
