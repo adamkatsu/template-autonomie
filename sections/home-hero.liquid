@@ -4,7 +4,7 @@
     {% if section.settings.product_one %}
       {% assign product_one = all_products[section.settings.product_one] %}
       <a href="{{ product_one.url }}" class="home-btn">
-        <span class="txt-400 fs-14 cl-white-50 uppercase">Lorem Ipsum</span>
+        <span class="txt-400 fs-14 cl-white-50 uppercase">{{ section.settings.product_one_text }}</span>
         <span class="txt-500 fs-20 cl-white">{{ product_one.title }}</span>
       </a>
     {% endif %}
@@ -13,7 +13,7 @@
     {% if section.settings.product_two %}
       {% assign product_two = all_products[section.settings.product_two] %}
       <a href="{{ product_two.url }}" class="home-btn">
-        <span class="txt-400 fs-14 cl-white-50 uppercase">Lorem Ipsum</span>
+        <span class="txt-400 fs-14 cl-white-50 uppercase">{{ section.settings.product_two_text }}</span>
         <span class="txt-500 fs-20 cl-white">{{ product_two.title }}</span>
       </a>
     {% endif %}
@@ -32,9 +32,21 @@
       "label": "Product One"
     },
     {
+      "type": "text",
+      "id": "product_one_text",
+      "label": "Product One Title",
+      "default": "Lorem Ipsum"
+    },
+    {
       "type": "product",
       "id": "product_two",
       "label": "Product Two"
+    },
+    {
+      "type": "text",
+      "id": "product_two_text",
+      "label": "Product Two Title",
+      "default": "Lorem Ipsum"
     }
   ],
   "blocks": [
