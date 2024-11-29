@@ -1,12 +1,22 @@
 <div class="container container-full home-hero-cont">
   <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/home_1.webp?v=1731811475" alt="" class="bg-full">
   <div class="home-section-title">
-    <span class="txt-400 .fs-14 cl-white-50 uppercase">Lorem Ipsum</span>
-    <span class="txt-500 fs-20 cl-white">Sunkissed Midi Dress Ombre</span>
+    {% if section.settings.product_one %}
+      {% assign product_one = all_products[section.settings.product_one] %}
+      <a href="{{ product_one.url }}" class="home-btn">
+        <span class="txt-400 fs-14 cl-white-50 uppercase">Lorem Ipsum</span>
+        <span class="txt-500 fs-20 cl-white">{{ product_one.title }}</span>
+      </a>
+    {% endif %}
   </div>
   <div class="home-section-title">
-    <span class="txt-400 .fs-14 cl-white-50 uppercase">Lorem Ipsum</span>
-    <span class="txt-500 fs-20 cl-white">Sunkissed Midi Dress Ombre</span>
+    {% if section.settings.product_two %}
+      {% assign product_two = all_products[section.settings.product_two] %}
+      <a href="{{ product_two.url }}" class="home-btn">
+        <span class="txt-400 fs-14 cl-white-50 uppercase">Lorem Ipsum</span>
+        <span class="txt-500 fs-20 cl-white">{{ product_two.title }}</span>
+      </a>
+    {% endif %}
   </div>
 </div>
 
@@ -16,7 +26,16 @@
   "tag": "section",
   "class": "home-hero section-full",
   "settings": [
-    
+    {
+      "type": "product",
+      "id": "product_one",
+      "label": "Product One"
+    },
+    {
+      "type": "product",
+      "id": "product_two",
+      "label": "Product Two"
+    }
   ],
   "blocks": [
   ]
