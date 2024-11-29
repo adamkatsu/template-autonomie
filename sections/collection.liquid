@@ -7,7 +7,7 @@
       <span class="txt-500 fs-14 cl-black-50 uppercase">({{ collection.products_count }} Products)</span>
     </div>
     <div class="collection-filter">
-      <button class="btn-filter-trigger">
+      <button id="filter-show" class="btn-filter-trigger">
         Filter
         <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.5 7.5H10.5" stroke="#111111" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round"/>
@@ -61,7 +61,123 @@
       </div>
     {% endfor %}
   </div>
+  <div class="collection-popup">
+    <div class="collection-popup-filter">
+      <div class="collection-popup-filter-head">
+        <span>Filters</span>
+        <Button id="filter-hide" class="btn-variant">
+          <span>Close</span>
+        </Button>
+      </div>
+      <div class="collection-popup-filter-list">
+        <div class="filter-variant">
+          <div class="filter-variant-head">
+            <span>Colors</span>
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.6199 9.2793L7.81655 5.47596C7.36738 5.0268 6.63238 5.0268 6.18322 5.47596L2.37988 9.2793" stroke="#111111" stroke-width="0.875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="filter-variant-list">
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+          </div>
+        </div>
+        <div class="filter-variant">
+          <div class="filter-variant-head">
+            <span>Colors</span>
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.6199 9.2793L7.81655 5.47596C7.36738 5.0268 6.63238 5.0268 6.18322 5.47596L2.37988 9.2793" stroke="#111111" stroke-width="0.875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="filter-variant-list">
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+          </div>
+        </div>
+        <div class="filter-variant">
+          <div class="filter-variant-head">
+            <span>Colors</span>
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.6199 9.2793L7.81655 5.47596C7.36738 5.0268 6.63238 5.0268 6.18322 5.47596L2.37988 9.2793" stroke="#111111" stroke-width="0.875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="filter-variant-list">
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+            <button class="filter-variant-list-item btn-variant">
+              <div class="color-indicator"></div>
+              <span>Black</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
 
 <script src="{{ "collection.js" |  asset_url }}"></script>
 
