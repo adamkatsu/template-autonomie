@@ -12,6 +12,19 @@
     {{ 'main.css' | asset_url | stylesheet_tag }}
   </head>
   <body>
+    <div id="drawer-cart" class="drawer">
+      <div class="drawer-header">
+        <h2>Your Cart</h2>
+        <button id="close-drawer">Close</button>
+      </div>
+      <div id="drawer-cart-items">
+        <!-- Cart items will be dynamically inserted here -->
+      </div>
+      <div class="drawer-footer">
+        <p>Total: <span id="cart-total">$0.00</span></p>
+        <a href="/cart" class="button">Go to Cart</a>
+      </div>
+    </div>
 
   {%- sections 'header-group' -%}
 
@@ -21,6 +34,8 @@
 
     {%- sections 'footer-group' -%}
     {{ 'main.js' | asset_url | script_tag }}
+
+    
 
   </body>
 </html>
