@@ -22,9 +22,9 @@
       "type": "home-section-two",
       "settings": {
         "product_one": "at-heart-top",
-        "product_one_text": "Lorem Ipsum",
+        "product_one_text": "Product Left",
         "product_two": "dolor-sit-amet",
-        "product_two_text": "Lorem Ipsum"
+        "product_two_text": "Product Right"
       }
     },
     "home-section-three": {
