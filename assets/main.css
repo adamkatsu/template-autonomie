@@ -571,18 +571,6 @@ a {
   position: relative;
   z-index: 2;
 }
-.home-section-title .items-center {
-  align-items: center;
-  text-align: center;
-}
-.home-section-title .align-bottom {
-  margin-top: auto;
-  margin-bottom: 0;
-}
-.home-section-title .align-top {
-  margin-top: 0;
-  margin-bottom: auto;
-}
 .home-section-title .home-btn {
   display: flex;
   flex-direction: column;
@@ -607,6 +595,33 @@ a {
 .home-section-title .home-btn:hover::after {
   width: 100%;
   transition: all 0.2s ease-out;
+}
+.home-section-title .home-btn .items-center {
+  align-items: center;
+  text-align: center;
+}
+.home-section-title .home-btn .align-bottom {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+.home-section-title .home-btn .align-top {
+  margin-top: 0;
+  margin-bottom: auto;
+}
+
+.items-center {
+  align-items: center;
+  text-align: center;
+}
+
+.align-bottom {
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.align-top {
+  margin-top: 0;
+  margin-bottom: auto;
 }
 
 .bg-full {
