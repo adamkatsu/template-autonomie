@@ -38,46 +38,4 @@ document.querySelectorAll('.product-accordion-head').forEach(header => {
       content.style.maxHeight = '0'; // Collapse content
     }
   });
-
-  document.querySelectorAll('.add-to-cart-btn').forEach(button => {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
-      const form = this.closest('form');
-      const formData = new FormData(form);
-  
-      fetch('/cart/add.js', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        // Open the drawer
-        document.getElementById('drawer-cart').classList.add('open');
-        updateCart();
-      })
-      .catch(error => console.error('Error:', error));
-    });
-  });
-  
-  function updateCart() {
-    fetch('/cart.js')
-      .then(response => response.json())
-      .then(cart => {
-        const cartItems = cart.items.map(item => `
-          <div class="cart-item">
-            <p>${item.title}</p>
-            <p>Quantity: ${item.quantity}</p>
-            <p>Price: $${(item.final_line_price / 100).toFixed(2)}</p>
-          </div>
-        `).join('');
-        document.getElementById('drawer-cart-items').innerHTML = cartItems;
-        document.getElementById('cart-total').textContent = `$${(cart.total_price / 100).toFixed(2)}`;
-      })
-      .catch(error => console.error('Error:', error));
-  }
-  
-  // Close the drawer
-  document.getElementById('close-drawer').addEventListener('click', () => {
-    document.getElementById('drawer-cart').classList.remove('open');
-  });
 });
