@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((response) => {
           if (response.ok) {
             // Redirect to the cart page
-            window.location.href = '/cart'
+            // window.location.href = '/cart'
+            console.log('product added!');
           } else {
             alert("Error adding to cart. Please try again.");
           }

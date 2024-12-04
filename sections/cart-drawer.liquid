@@ -1,0 +1,38 @@
+<div class="drawer">
+  <div class="drawer-header">
+    <h2>Your Cart</h2>
+    <button id="close-drawer" class="close-drawer">Close</button>
+  </div>
+  {% if cart.item_count == 0 %}
+    <p>Your Cart is Empty</p>
+  {% else %}
+    {% form 'cart', cart %}
+      <!-- Cart items will be dynamically inserted here -->
+      {% for item in cart.items %}
+        <div id="drawer-cart-items">
+          <img src="{{ item.image |  image_url: width: 480  }}" alt="">
+          <h3>{{ item.product.title }}</h3>
+          <p>{{ item.variant.title }}</p>
+          <a href="{{ item.url_to_remove }}">remove</a>
+          <p>{{ item.final_line_price | money }}</p>
+          <input name="quantity" value="{{ item.quantity }}">
+        </div>
+      {% endfor %}
+      <div class="drawer-footer">
+        <p>Total: <span id="cart-total">{{ cart.total_price | money }}</span></p>
+        <button type="submit" name="checkout">Checkout</button>
+        <a href="/cart" class="button">Go to Cart</a>
+      </div>
+    {% endform %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Cart Drawer",
+  "tag": "section",
+  "class": "section cart-drawer",
+  "settings": [
+  ]
+}
+{% endschema %}

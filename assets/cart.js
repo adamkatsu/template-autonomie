@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.querySelectorAll(".product-quantity input").forEach(input => {
-    console.log(input)
     input.addEventListener("input", function () {
       console.log('quantity changed');
       this.closest("form").submit();
