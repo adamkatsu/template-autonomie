@@ -21,8 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((response) => {
           if (response.ok) {
             // Redirect to the cart page
-            document.getElementById('drawer-cart').classList.add('open');
-            updateCart();
+            window.location.href = '/cart'
           } else {
             alert("Error adding to cart. Please try again.");
           }
@@ -33,27 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  function updateCart() {
-    fetch('/cart.js')
-      .then(response => response.json())
-      .then(cart => {
-        const cartItems = cart.items.map(item => `
-          <div class="cart-item">
-            <p>${item.title}</p>
-            <p>Quantity: ${item.quantity}</p>
-            <p>Price: $${(item.final_line_price / 100).toFixed(2)}</p>
-          </div>
-        `).join('');
-        document.getElementById('drawer-cart-items').innerHTML = cartItems;
-        document.getElementById('cart-total').textContent = `$${(cart.total_price / 100).toFixed(2)}`;
-      })
-      .catch(error => console.error('Error:', error));
-  }
-  
-  // Close the drawer
-  document.getElementById('close-drawer').addEventListener('click', () => {
-    document.getElementById('drawer-cart').classList.remove('open');
-  });
 
   // Show / Hide Filter Modal
   const filterShow = document.getElementById('filter-show');
@@ -66,6 +44,4 @@ document.addEventListener("DOMContentLoaded", function () {
   filterHide.addEventListener('click', () => {
     filterPopup.classList.remove('popup-active');
   })
-  
-  
 });

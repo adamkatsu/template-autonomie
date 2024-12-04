@@ -1,3 +1,4 @@
+{% assign selectedVariant = product.selected_or_first_available_variant %}
 <div class="container product-main-cont">
   <div class="product-main-gallery">
     {% for image in product.images %}
@@ -23,13 +24,17 @@
 
         <div class="product-variant-size-wrapper">
           {% for variant in product.variants %}
-            <div class="product-variant-size-item">
+            <div
+               class="product-variant-size-item">
               <label for="product-variant-option{{ variant.id }}">{{ variant.title }}</label>
               <input 
                 type="radio" 
-                name="product-variant-size" 
+                name="id" 
                 id="product-variant-option{{ variant.id }}" 
                 value="{{ variant.id }}" 
+                {% if selectedVariant.id == variant.id %}
+                  checked
+                {% endif %}
               >
             </div>
           {% endfor %}
