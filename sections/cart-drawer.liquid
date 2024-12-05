@@ -9,13 +9,26 @@
     {% form 'cart', cart %}
       <!-- Cart items will be dynamically inserted here -->
       {% for item in cart.items %}
-        <div id="drawer-cart-items">
+        <div data-line-item-key="{{ item.key }}" id="drawer-cart-items">
           <img src="{{ item.image |  image_url: width: 480  }}" alt="">
           <h3>{{ item.product.title }}</h3>
           <p>{{ item.variant.title }}</p>
           <a href="{{ item.url_to_remove }}">remove</a>
           <p>{{ item.final_line_price | money }}</p>
-          <input name="quantity" value="{{ item.quantity }}">
+          <div class="product-quantity drawer-cart-product-quantity">
+            <button type="button" id="decrease-quantity" class="decrease-quantity">
+              <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.5 10.5H15.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <input type="number" id="quantity-input" name="quantity" value="{{ item.quantity }}" min="0">
+            <button type="button" id="increase-quantity" class="increase-quantity">
+              <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.5 10.5H15.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10.5 15.5V5.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
         </div>
       {% endfor %}
       <div class="drawer-footer">
