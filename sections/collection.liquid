@@ -38,7 +38,20 @@
           </svg>
         </a>
           
-        <img src="{{ product.featured_image |  image_url: width: 320 }}" alt="">
+          <!-- Featured Image -->
+        <img 
+        src="{{ product.featured_image | image_url: width: 320 }}" 
+        alt="{{ product.title }}" 
+        class="featured-image" 
+        />
+        <!-- Hover Image -->
+        {% if product.images.size > 1 %}
+        <img 
+          src="{{ product.images[1] | image_url: width: 320 }}" 
+          alt="{{ product.title }}" 
+          class="hover-image" 
+        />
+        {% endif %}
 
         <div class="collection-product-details">
           <div class="collection-product-title">
@@ -192,4 +205,4 @@
     "blocks": [
     ]
   }
-  {% endschema %}
+{% endschema %}

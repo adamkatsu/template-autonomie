@@ -124,10 +124,15 @@
   </ul>
 </div>
 <div class="dropdown-right">
-  <div class="nav-search-wrapper">
-    <input type="text" placeholder="Search">
+  <form action="{{ routes.search_url }}" class="nav-search-wrapper">
+    <input type="text"
+      placeholder="Search"
+      name="q"
+      value="{{ search.terms | escape }}"
+    >
     <button class="btn-nav-cancel">Cancel</button>
-  </div>
+  {% comment %} <input type="submit" value="Search"> {% endcomment %}
+  </form>
   <div class="dropdown-right-main">
     <div class="dropdown-right-list-wrapper">
       <span class="dropdown-right-list-title">Trending Searches</span>

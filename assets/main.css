@@ -1512,6 +1512,17 @@ a {
   height: 100%;
   object-fit: cover;
   z-index: -1;
+  transition: all 0.5s ease;
+  opacity: 1;
+}
+.collection-product img.hover-image {
+  opacity: 0;
+}
+.collection-product:hover img.hover-image {
+  opacity: 1;
+}
+.collection-product:hover img.featured-image {
+  opacity: 0;
 }
 .collection-product-details {
   display: flex;

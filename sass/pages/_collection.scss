@@ -70,6 +70,19 @@
       height: 100%;
       object-fit: cover;
       z-index: -1;
+      transition: all .5s ease;
+      opacity: 1;
+    }
+    & img.hover-image {
+      opacity: 0;
+    }
+    
+    &:hover img.hover-image {
+      opacity: 1;
+    }
+    
+    &:hover img.featured-image {
+      opacity: 0;
     }
     &-details {
       @include flex-box(row, space-between, flex-start, 16px);
