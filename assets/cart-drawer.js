@@ -27,7 +27,8 @@ function addCartDrawerListeners() {
 
     button.addEventListener('click', async () => {
       // Get line item key
-      const rootItem = button.parentElement.parentElement;
+      const rootItem = button.parentElement.parentElement.parentElement;
+      console.log(rootItem)
       const key = rootItem.getAttribute('data-line-item-key');
 
       // Get new quantity
@@ -59,7 +60,7 @@ function addCartDrawerListeners() {
     input.addEventListener('input', async () => {
 
       // Get line item key
-      const rootItem = input.parentElement.parentElement;
+      const rootItem = input.parentElement.parentElement.parentElement;
       console.log(rootItem);
       const key = rootItem.getAttribute('data-line-item-key');
 
@@ -157,6 +158,13 @@ document.querySelectorAll('a[href="/cart"]').forEach((a) => {
   a.addEventListener('click', (e) => {
     e.preventDefault();
     openCartDrawer();
+  })
+})
+
+document.querySelectorAll('.go-to-cart').forEach((a) => {
+  a.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = "/cart"
   })
 })
 
