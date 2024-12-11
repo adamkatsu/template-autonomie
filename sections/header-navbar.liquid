@@ -2,15 +2,11 @@
 <div class="container container-full navbar-cont">
     <div class="navbar-left">
       <ul class="navbar-menu">
-        <li class="navbar-menu-item txt-400 fs-14 cl-white">
-          <a href="#" id="nav-shop">Shop</a>
-        </li>
-        <li class="navbar-menu-item txt-400 fs-14 cl-white">
-          <a href="/pages/brand">Brand</a>
-        </li>
-        <li class="navbar-menu-item txt-400 fs-14 cl-white">
-          <a href="#">Sale</a>
-        </li>
+        {% for link in linklists['main-menu'].links %}
+          <li class="navbar-menu-item txt-400 fs-14 cl-white">
+            <a href="{{ link.url }}" id="nav-shop">{{ link.title }}</a>
+          </li>
+        {% endfor %}
       </ul>
       <span class="navbar-menu-item txt-400 fs-14 cl-white">USD</span>
     </div>
@@ -103,24 +99,11 @@
 <div class="dropdown-left">
   <span class="dropdown-left-title">Shop</span>
   <ul class="dropdown-left-list">
-    <li class="dropdown-left-item">
-      <a href="/collections/all">Shop All</a>
-    </li>
-    <li class="dropdown-left-item">
-      <a href="#">New In</a>
-    </li>
-    <li class="dropdown-left-item">
-      <a href="#">Summer Edit</a>
-    </li>
-    <li class="dropdown-left-item">
-      <a href="#">Evening</a>
-    </li>
-    <li class="dropdown-left-item">
-      <a href="#">Dresses</a>
-    </li>
-    <li class="dropdown-left-item">
-      <a href="#">Tops</a>
-    </li>
+    {% for link in linklists['shop-categories-menu'].links %}
+      <li class="dropdown-left-item">
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      </li>
+    {% endfor %}
   </ul>
 </div>
 <div class="dropdown-right">

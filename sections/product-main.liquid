@@ -99,6 +99,13 @@
         </div>
       </div>
 
+      {% for item in product.metafields.shopify.color-pattern.value %}
+        {% comment %} {{ item | json }} {% endcomment %}
+        <div style="height: 24px; width: 24px; border-radius: 100%; background-color: {{ item.color }}"></div>
+        {{ item.label }}
+      {% endfor %}
+
+
       <button type="submit" class="add-to-cart-btn btn-primary">Add to Cart</button>
     {% endform %}
     

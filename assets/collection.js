@@ -29,5 +29,22 @@ document.addEventListener("DOMContentLoaded", function () {
     filterPopup.classList.remove('popup-active');
   })
 
+
+  // Show More Filters
+  const sections = document.querySelectorAll('.filter-variant-list');
+    
+    sections.forEach(section => {
+      const showMoreBtn = section.querySelector('.show-more-btn');
+      const hiddenItems = section.querySelectorAll('.filter-variant-list-item.hidden');
+      
+      if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', function () {
+          hiddenItems.forEach(item => {
+            item.classList.remove('hidden');
+          });
+          showMoreBtn.style.display = 'none'; // Hide the button after all items are shown
+        });
+      }
+    });
   
 });

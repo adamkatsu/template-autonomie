@@ -1451,7 +1451,7 @@ a {
 .collection-main {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 8px;
   flex-wrap: wrap;
@@ -1609,6 +1609,7 @@ a {
   gap: 64px;
   width: 600px;
   background-color: #ffffff;
+  max-height: 100%;
 }
 .collection-popup-filter-head {
   display: flex;
@@ -1650,23 +1651,34 @@ a {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 24px;
+  gap: 14px;
   padding-right: 75px;
+  padding-top: 16px;
   flex-wrap: wrap;
+  position: relative;
 }
 .filter-variant-list-item {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
+  padding: 5px 10px;
   width: calc(50% - 12px);
 }
-.filter-variant .color-indicator {
-  width: 16px;
-  height: 16px;
+.filter-variant-list-item input {
+  display: none;
+}
+.filter-variant-list-item.hidden {
+  display: none;
+}
+.filter-variant-list-item:has(input[type=checkbox]:checked) .filter-active-indicator {
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: #e3e3e3;
+  border: 1px solid #111111;
   border-radius: 100%;
-  background-color: #111111;
 }
 
 .btn-variant {
@@ -1684,6 +1696,35 @@ a {
 .btn-variant:hover span {
   border-bottom: 1px solid #111111;
   transition: all 0.5s ease;
+}
+
+.popup-filter-form {
+  max-height: 100%;
+  overflow: scroll;
+  margin-bottom: 32px;
+}
+.popup-filter-form details {
+  border-bottom: 1px solid #E3E3E3;
+  padding: 32px 0;
+}
+.popup-filter-form details:last-child {
+  border: none;
+}
+
+.color-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+}
+
+.show-more-btn {
+  position: absolute;
+  bottom: 0;
+  right: -75px;
+  color: #999999;
+  text-decoration: underline;
+  font-size: 14px;
+  line-height: 120%;
 }
 
 /*# sourceMappingURL=main.css.map */
