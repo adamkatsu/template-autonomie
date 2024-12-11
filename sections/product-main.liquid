@@ -58,19 +58,32 @@
       </div>
 
       <div class="product-accordion">
-        <div class="product-accordion-item">
-          <div class="product-accordion-head">
-            <span class="txt-500 fs-14 cl-black">Details</span>
-            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M11.6199 5.7207L7.81655 9.52404C7.36738 9.9732 6.63238 9.9732 6.18322 9.52404L2.37988 5.7207" stroke="#111111" stroke-width="0.875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        {% if product.metafields.custom.details != blank %}
+          <div class="product-accordion-item">
+            <div class="product-accordion-head">
+              <span class="txt-500 fs-14 cl-black">Details</span>
+              <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.6199 5.7207L7.81655 9.52404C7.36738 9.9732 6.63238 9.9732 6.18322 9.52404L2.37988 5.7207" stroke="#111111" stroke-width="0.875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="product-accordion-content">
+              {{ product.metafields.custom.details }}
+            </div>
           </div>
-          <div class="product-accordion-content">
-            <p>
-              Your account will be charged at the time of delivery, except for DIY products where you will have to pay the full amount at the time of purchase.
-            </p>
+        {% endif %}
+        {% if product.metafields.custom.styling_tips != blank %}
+          <div class="product-accordion-item">
+            <div class="product-accordion-head">
+              <span class="txt-500 fs-14 cl-black">Details</span>
+              <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.6199 5.7207L7.81655 9.52404C7.36738 9.9732 6.63238 9.9732 6.18322 9.52404L2.37988 5.7207" stroke="#111111" stroke-width="0.875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="product-accordion-content">
+              {{ product.metafields.custom.styling_tips }}
+            </div>
           </div>
-        </div>
+        {% endif %}
         <div class="product-accordion-item">
           <div class="product-accordion-head">
             <span class="txt-500 fs-14 cl-black">Care Guide</span>
@@ -98,13 +111,6 @@
           </div>
         </div>
       </div>
-
-      {% for item in product.metafields.shopify.color-pattern.value %}
-        {% comment %} {{ item | json }} {% endcomment %}
-        <div style="height: 24px; width: 24px; border-radius: 100%; background-color: {{ item.color }}"></div>
-        {{ item.label }}
-      {% endfor %}
-
 
       <button type="submit" class="add-to-cart-btn btn-primary">Add to Cart</button>
     {% endform %}

@@ -182,6 +182,12 @@ a {
   cursor: pointer;
 }
 
+.button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .switch {
   padding: 2px;
   width: 28px;
@@ -1651,11 +1657,15 @@ a {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  gap: 14px;
+  gap: 24px;
   padding-right: 75px;
   padding-top: 16px;
   flex-wrap: wrap;
   position: relative;
+  width: 100%;
+}
+.filter-variant-list:has(.list-size) {
+  gap: 8px;
 }
 .filter-variant-list-item {
   display: flex;
@@ -1663,7 +1673,6 @@ a {
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
-  padding: 5px 10px;
   width: calc(50% - 12px);
 }
 .filter-variant-list-item input {
@@ -1672,13 +1681,30 @@ a {
 .filter-variant-list-item.hidden {
   display: none;
 }
+.filter-variant-list-item .filter-active-indicator {
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  transition: all 0.2s ease;
+}
 .filter-variant-list-item:has(input[type=checkbox]:checked) .filter-active-indicator {
-  display: block;
-  width: 8px;
-  height: 8px;
-  background-color: #e3e3e3;
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+.filter-variant-list-item:has(label.size) {
+  width: fit-content;
+}
+.filter-variant-list-item:has(label.size) .filter-active-indicator {
+  display: none;
+}
+.filter-variant-list-item .size {
+  border: 1px solid #E3E3E3;
+  color: #999;
+  padding: 14px;
+}
+.filter-variant-list-item .size:has(input[type=checkbox]:checked) {
   border: 1px solid #111111;
-  border-radius: 100%;
+  color: #111111;
 }
 
 .btn-variant {
@@ -1706,9 +1732,18 @@ a {
 .popup-filter-form details {
   border-bottom: 1px solid #E3E3E3;
   padding: 32px 0;
+  position: relative;
 }
 .popup-filter-form details:last-child {
   border: none;
+}
+.popup-filter-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 80px;
+  padding-top: 32px;
 }
 
 .color-indicator {
@@ -1725,6 +1760,18 @@ a {
   text-decoration: underline;
   font-size: 14px;
   line-height: 120%;
+}
+
+.filter-current:hover {
+  color: #111111;
+}
+
+.filter-current-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
 }
 
 /*# sourceMappingURL=main.css.map */
