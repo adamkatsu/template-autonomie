@@ -94,6 +94,7 @@
   }
   &-address {
     @include flex-box(column, flex-start, flex-start, 16px);
+    min-width: 640px;
 
     .address {
       @include flex-box(column, flex-start, flex-start, 4px);
@@ -107,6 +108,9 @@
     }
     ul {
       @include flex-box(column, flex-start, flex-start, 8px);
+    }
+    &-details {
+      @include flex-box(column, flex-start, flex-start, 16px);
     }
   }
 }
