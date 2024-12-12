@@ -88,26 +88,38 @@
       <span class="txt-400 fs-14 cl-white">© 2024 Autonomie. All right Reserved</span>
     </div>
   </div>
-  <div class="language-selector">
-    <form method="get" action="{{ shop.locale_href }}">
-        <select name="locale" onchange="this.form.submit()">
-            {% for locale in shop.enabled_locales %}
-                <option value="{{ locale }}" {% if locale == shop.locale %}selected{% endif %}>
-                  {% if locale == 'en' %}
-                      English
-                  {% elsif locale == 'fr' %}
-                      French
-                  {% elsif locale == 'es' %}
-                      Spanish
-                  {% else %}
-                      {{ locale }}
-                  {% endif %}
-                </option>
-            {% endfor %}
-        </select>
+  <div class="localization-selector">
+    <!-- Language Selector -->
+    <form method="get" action="{{ localization.language.change_url }}">
+      <label for="language-select">Language:</label>
+      <select id="language-select" name="locale" onchange="this.form.submit()">
+        {% for language in localization.languages %}
+          <option value="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}selected{% endif %}>
+            {{ language.name }}
+          </option>
+        {% endfor %}
+      </select>
     </form>
-</div>
-
+  
+    <!-- Currency Selector -->
+    {% if localization.enabled_currencies.size > 1 %}
+    <form method="post" action="/cart/update">
+      <label for="currency-select">Currency:</label>
+      <select id="currency-select" name="currency" onchange="this.form.submit()">
+        {% for currency in localization.enabled_currencies %}
+          <option value="{{ currency }}" {% if currency == localization.currency %}selected{% endif %}>
+            {{ currency }}
+          </option>
+        {% endfor %}
+      </select>
+      {{ form | payment_terms }}
+    </form>
+    {% endif %}
+  </div>
+  
+  {% for language in localization.available_languages %}
+    <p>{{ language.iso_code }} - {{ language.name }}</p>
+  {% endfor %}
 </div>
 
 {% schema %}
