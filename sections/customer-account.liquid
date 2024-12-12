@@ -1,33 +1,39 @@
-<!-- /templates/customers/account.liquid -->
+<div class="container customer-account-cont">
+  <h1>My Account</h1>
 
-{% if customer.default_address %}
-  <h2>Address</h2>
-  <p>{{ customer.default_address.address1 }}</p>
-  {% if customer.default_address.address2 != "" %}
-    <p>{{ customer.default_address.address2 }}</p>
-  {% endif %}
-  <p>{{ customer.default_address.city}}, {% if address.province_code %}{{ customer.default_address.province_code }}, {% endif %}{{ customer.default_address.country }}</p>
-  <p>{{ customer.default_address.zip }}</p>
-  <p>{{ customer.default_address.phone }}</p>
-{% endif %}
+  <div>
+    <h2>Order History</h2>
+    {% if customer.orders_count > 0 %}
+      <ul>
+        {% for order in customer.orders %}
+          <li>
+            <strong>Order #{{ order.name }}</strong> - Placed on {{ order.created_at | date: "%B %d, %Y" }}
+            <ul>
+              {% for line_item in order.line_items %}
+                <li>
+                  <strong>Product:</strong> {{ line_item.title }}
+                  <br>
+                  <strong>Quantity:</strong> {{ line_item.quantity }}
+                  <br>
+                  <strong>Price:</strong> {{ line_item.price | money }}
+                </li>
+              {% endfor %}
+            </ul>
+            <p><strong>Total:</strong> {{ order.total_price | money }}</p>
+            <p><strong>Status:</strong> {{ order.fulfillment_status | default: "Pending" }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You haven't placed any orders yet.</p>
+    {% endif %}
+  </div>
 
-<div id="customer_orders">
-  <h2>Orders</h2>
-  {% paginate customer.orders by 10 %}
-  {% if customer.orders.size != 0 %}
-    {% for order in customer.orders %}
-      <!-- order details here -->
-    {% endfor %}
-  {% else %}
-    <p>You haven't placed any orders yet.</p>
-  {% endif %}
-  {{ paginate | default_pagination }}
-  {% endpaginate %}
 </div>
 
 {% schema %}
   {
-    "name": "customer-account Section",
+    "name": "Customer Account Section",
     "tag": "section",
     "class": "section customer-account",
     "settings": [
