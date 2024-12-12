@@ -88,38 +88,32 @@
       <span class="txt-400 fs-14 cl-white">© 2024 Autonomie. All right Reserved</span>
     </div>
   </div>
-  <div class="localization-selector">
-    <!-- Language Selector -->
-    <form method="get" action="{{ localization.language.change_url }}">
-      <label for="language-select">Language:</label>
-      <select id="language-select" name="locale" onchange="this.form.submit()">
-        {% for language in localization.languages %}
-          <option value="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}selected{% endif %}>
-            {{ language.name }}
-          </option>
-        {% endfor %}
-      </select>
-    </form>
   
-    <!-- Currency Selector -->
-    {% if localization.enabled_currencies.size > 1 %}
-    <form method="post" action="/cart/update">
-      <label for="currency-select">Currency:</label>
-      <select id="currency-select" name="currency" onchange="this.form.submit()">
-        {% for currency in localization.enabled_currencies %}
-          <option value="{{ currency }}" {% if currency == localization.currency %}selected{% endif %}>
-            {{ currency }}
-          </option>
-        {% endfor %}
-      </select>
-      {{ form | payment_terms }}
-    </form>
-    {% endif %}
-  </div>
+  <form method="get" action="{{ localization.language_switch_url }}">
+    <select name="language" onchange="this.form.submit()">
+      {% for language in localization.available_languages %}
+        <option value="{{ language.iso_code }}" {% if localization.current_language.iso_code == language.iso_code %}selected{% endif %}>
+          {{ language.name }}
+        </option>
+      {% endfor %}
+    </select>
+  </form>
+
+  <form action="{{ shop.url }}" method="get" id="currency-selector-form">
+  <label for="currency-selector">Choose Currency:</label>
+  <select id="currency-selector" name="currency" onchange="this.form.submit()">
+    {% for currency in shop.enabled_currencies %}
+      <option value="{{ currency.iso_code }}" {% if currency.iso_code == shop.currency %}selected{% endif %}>
+        {{ currency.iso_code }}
+      </option>
+    {% endfor %}
+  </select>
+</form>
+
   
-  {% for language in localization.available_languages %}
-    <p>{{ language.iso_code }} - {{ language.name }}</p>
-  {% endfor %}
+  
+  
+
 </div>
 
 {% schema %}
