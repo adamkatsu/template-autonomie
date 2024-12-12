@@ -94,13 +94,12 @@
   }
   &-address {
     @include flex-box(column, flex-start, flex-start, 16px);
-    min-width: 640px;
 
     .address {
       @include flex-box(column, flex-start, flex-start, 4px);
     }
   }
-  .order {
+  &-order {
     @include flex-box(column, flex-start, flex-start, 16px);
 
     &-info {

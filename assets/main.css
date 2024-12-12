@@ -1173,7 +1173,6 @@ a {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 16px;
-  min-width: 640px;
 }
 .customer-address .address {
   display: flex;
@@ -1182,28 +1181,28 @@ a {
   align-items: flex-start;
   gap: 4px;
 }
-.customer .order {
+.customer-order {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 16px;
 }
-.customer .order-info {
+.customer-order-info {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 8px;
 }
-.customer .order ul {
+.customer-order ul {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 8px;
 }
-.customer .order-details {
+.customer-order-details {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
