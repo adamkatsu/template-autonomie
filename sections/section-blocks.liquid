@@ -1,6 +1,6 @@
 <div class="container content-blocks-cont">
   <div class="content-blocks-item">
-    <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/about_3.webp?v=1731811475" alt="" class="content-blocks-img">
+    <img src="="{{ section.settings.select_image |  image_url: width: 1920  }}" alt="" class="content-blocks-img">
     <div class="content-blocks-content">
       <div class="content-blocks-wrapper">
         <span class="txt-400 fs-14 cl-black-50 uppercase txt-center">Founder</span>
@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="content-blocks-item flex-row-rvs">
-    <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/about_4.webp?v=1731811474" alt="" class="content-blocks-img">
+    <img src="="{{ section.settings.select_image_two |  image_url: width: 1920  }}" alt="" class="content-blocks-img">
     <div class="content-blocks-content">
       <div class="content-blocks-wrapper">
         <span class="txt-400 fs-14 cl-black-50 uppercase txt-center">Founder</span>
@@ -31,7 +31,16 @@
     "tag": "section",
     "class": "section content-blocks",
     "settings": [
-      
+      {
+        "type": "image_picker",
+        "id": "select_image",
+        "label": "Select Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "select_image_two",
+        "label": "Select Image Two"
+      }
     ],
     "blocks": [
     ]
