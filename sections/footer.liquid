@@ -88,11 +88,31 @@
       <span class="txt-400 fs-14 cl-white">© 2024 Autonomie. All right Reserved</span>
     </div>
   </div>
+  <div class="language-selector">
+    <form method="get" action="{{ shop.locale_href }}">
+        <select name="locale" onchange="this.form.submit()">
+            {% for locale in shop.enabled_locales %}
+                <option value="{{ locale }}" {% if locale == shop.locale %}selected{% endif %}>
+                  {% if locale == 'en' %}
+                      English
+                  {% elsif locale == 'fr' %}
+                      French
+                  {% elsif locale == 'es' %}
+                      Spanish
+                  {% else %}
+                      {{ locale }}
+                  {% endif %}
+                </option>
+            {% endfor %}
+        </select>
+    </form>
+</div>
+
 </div>
 
 {% schema %}
   {
-    "name": "Home Hero Section",
+    "name": "Footer Section",
     "tag": "section",
     "class": "footer",
     "settings": [
