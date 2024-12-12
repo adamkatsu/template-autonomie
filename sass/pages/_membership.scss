@@ -70,3 +70,43 @@
     }
   }
 }
+
+.customer {
+  &-account {
+    &-cont {
+      @include flex-box(column, flex-start, stretch, 64px);
+    }
+    &-head {
+      @include flex-box(row, space-between, flex-end, 80px);
+    }
+    &-main {
+      @include flex-box(row, space-between, flex-start, 64px);
+
+      &-details {
+        @include flex-box(column, flex-start, flex-start, 64px);
+        padding: 24px;
+        border: 1px solid #e3e3e3;
+      }
+    }
+  }
+  &-name {
+    @include flex-box(column, flex-start, flex-start, 8px);
+  }
+  &-address {
+    @include flex-box(column, flex-start, flex-start, 16px);
+
+    .address {
+      @include flex-box(column, flex-start, flex-start, 4px);
+    }
+  }
+  .order {
+    @include flex-box(column, flex-start, flex-start, 16px);
+
+    &-info {
+      @include flex-box(column, flex-start, flex-start, 8px);
+    }
+    ul {
+      @include flex-box(column, flex-start, flex-start, 8px);
+    }
+  }
+}
