@@ -300,6 +300,80 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
+.language {
+  position: relative;
+}
+.language-btn {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+.language-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 8px;
+  border: 1px solid #ffffff;
+  width: fit-content;
+  background-color: #111111;
+  min-width: 240px;
+  max-height: 320px;
+  overflow-y: scroll;
+  margin-top: 16px;
+  position: absolute;
+  bottom: 0;
+}
+.language-list[hidden] {
+  display: none;
+}
+.language-list-item {
+  cursor: pointer;
+}
+
+.currency {
+  position: relative;
+}
+.currency-btn {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+.currency-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 12px 16px;
+  border: 1px solid #ffffff;
+  width: fit-content;
+  background-color: #ffffff;
+  max-height: 200px;
+  overflow-y: scroll;
+  margin-top: 16px;
+  position: absolute;
+  top: 24px;
+}
+.currency-list[hidden] {
+  display: none;
+}
+.currency-list-item {
+  cursor: pointer;
+  color: #111111;
+}
+
 .section {
   width: 100%;
   padding: 160px 24px;
