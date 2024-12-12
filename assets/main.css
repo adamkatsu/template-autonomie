@@ -1159,6 +1159,7 @@ a {
   gap: 64px;
   padding: 24px;
   border: 1px solid #e3e3e3;
+  width: 320px;
 }
 .customer-name {
   display: flex;
