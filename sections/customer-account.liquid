@@ -8,6 +8,7 @@
     {% if customer.orders_count > 0 %}
       <ul>
         {% for order in customer.orders %}
+          {{ order. }}
           <li>
             <strong>Order #{{ order.name }}</strong> - Placed on {{ order.created_at | date: "%B %d, %Y" }}
             <ul>
