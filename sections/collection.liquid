@@ -92,22 +92,28 @@
     
     {% for product in products %}
       <div class="collection-product">
-        <a href="{{ product.url }}" class="collection-product-anchor">
-          <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M5.5 10.5H15.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10.5 15.5V5.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+
+
+        <a href="{{ product.url }}" class="collection-product-link-anchor">
+          <a href="{{ product.url }}" class="collection-product-anchor">
+            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.5 10.5H15.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10.5 15.5V5.5" stroke="#111111" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
         </a>
           
-          <!-- Featured Image -->
+        <!-- Featured Image -->
         <img 
-        src="{{ product.featured_image | image_url: width: 1080 }}" 
-        alt="{{ product.title }}" 
-        class="featured-image" 
+          src="{{ product.featured_image | image_url: width: 1080 }}" 
+          alt="{{ product.title }}" 
+          class="featured-image" 
         />
+
+        
         <!-- Hover Image -->
         {% if product.images.size > 1 %}
-        <img 
+          <img 
           src="{{ product.images[1] | image_url: width: 1080 }}" 
           alt="{{ product.title }}" 
           class="hover-image" 
@@ -131,8 +137,7 @@
             {% endfor %}
           </div>
         </div>
-
-      </div>
+      </div>  
     {% endfor %}
   </div>
   <div class="collection-popup">

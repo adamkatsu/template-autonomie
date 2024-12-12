@@ -1567,6 +1567,15 @@ a {
   aspect-ratio: 23/31;
   overflow: hidden;
 }
+.collection-product-link-anchor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 .collection-product-anchor {
   position: absolute;
   top: 8px;
@@ -1581,6 +1590,9 @@ a {
 .collection-product-anchor:hover svg {
   transform: rotate(90deg);
   transition: all 0.4s ease;
+}
+.collection-product .img-product-link {
+  cursor: pointer;
 }
 .collection-product img {
   position: absolute;
