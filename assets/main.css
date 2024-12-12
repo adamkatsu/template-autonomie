@@ -188,20 +188,6 @@ a {
   cursor: pointer;
 }
 
-.switch {
-  padding: 2px;
-  width: 28px;
-  height: 16px;
-  background-color: #d9d9d9;
-  border-radius: 100px;
-}
-.switch-toggle {
-  width: 12px;
-  height: 12px;
-  background-color: #ffffff;
-  border-radius: 100%;
-}
-
 .cart-drawer {
   position: fixed;
   top: 0;
@@ -1772,6 +1758,51 @@ a {
   justify-content: flex-start;
   align-items: center;
   gap: 16px;
+}
+
+.form-sort select, .form-sort option {
+  background-color: #fff;
+  border: 1px solid #E3E3E3;
+}
+
+.switch {
+  display: block;
+  padding: 2px;
+  width: 28px !important;
+  height: 16px;
+  background-color: #d9d9d9;
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+}
+.switch-toggle {
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  border: none;
+  transform: translateX(0px);
+  transition: all 0.2s ease;
+}
+.switch:has(input[type=checkbox]:checked) .switch-toggle {
+  transform: translateX(12px);
+  transition: all 0.2s ease;
+}
+.switch-avail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+.switch-cbox {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

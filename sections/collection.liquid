@@ -1,4 +1,7 @@
 <div class="container collection-cont">
+  {% assign current_collection = collection %} 
+  {% assign sort_by = request.queryParams['sort_by'] %}
+
   <div class="collection-head">
     <div class="collection-title">
       <h1>{{ collection.title }}</h1>
@@ -14,22 +17,80 @@
           <path d="M7 11V4" stroke="#292D32" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
-      <button class="btn-filter-trigger collection-availability">
-        <span>Availability</span>
-        <div class="switch">
-          <div class="switch-toggle"></div>
-        </div>
-      </button>
-      <button class="btn-filter-trigger">
-        Sort By
-        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.6199 5.7207L7.81655 9.52404C7.36738 9.9732 6.63238 9.9732 6.18322 9.52404L2.37988 5.7207" stroke="#111111" stroke-width="0.875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+      {% comment %} <form style="cursor: pointer;">
+        {%- for filter in collection.filters -%}
+        {% if filter.label == 'Availability' %}
+          <div>
+            <ul>
+              {%- for filter_value in filter.values -%}
+                {% if filter_value.label == 'In stock' %}
+                  <li class="btn-filter-trigger">
+
+                      <label class="switch-avail" for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+
+                        <span class="fs-14 txt-500">{{ filter.label }}</span>
+
+                        <div class="switch">
+                          <div class="switch-toggle">
+                            <input type="checkbox"
+                              name="{{ filter_value.param_name }}"
+                              value="{{ filter_value.value }}"
+                              id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                              class="switch switch-cbox"
+                              onclick="this.form.submit();" 
+                              {% if filter_value.active -%}checked{%- endif %}
+                              {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                            >
+                          </div>
+                        </div>
+
+                      </label>
+
+                  </li>
+                {% endif %}
+              {%- endfor -%}
+            </ul>
+            
+            <div>
+              <input type="submit" value="Apply" hidden>
+            </div>
+
+            </div>
+        {% endif %}
+        {%- endfor -%}
+      </form> {% endcomment %}
+
+      <form action="{{ current_collection.url }}" method="get" class="form-sort">
+        <select name="sort_by" id="sort-by" class="btn-filter-trigger" onchange="this.form.submit()">
+          <option value="" {% if current_collection.sort_by == nil %}selected="selected"{% endif %}>Sort By</option>
+          <option value="best-selling" {% if current_collection.sort_by == 'best-selling' %}selected="selected"{% endif %}>Best Selling</option>
+          <option value="title-ascending" {% if current_collection.sort_by == 'title-ascending' %}selected="selected"{% endif %}>Title (A-Z)</option>
+          <option value="title-descending" {% if current_collection.sort_by == 'title-descending' %}selected="selected"{% endif %}>Title (Z-A)</option>
+          <option value="price-ascending" {% if current_collection.sort_by == 'price-ascending' %}selected="selected"{% endif %}>Price: Low to High</option>
+          <option value="price-descending" {% if current_collection.sort_by == 'price-descending' %}selected="selected"{% endif %}>Price: High to Low</option>
+          <option value="created-at" {% if current_collection.sort_by == 'created-at' %}selected="selected"{% endif %}>Date Added</option>
+        </select>
+      </form>
     </div>
   </div>
   <div class="collection-main">
-    {% for product in collection.products %}
+    {% if sort_by == 'best-selling' %}
+      {% assign products = collection.products | sort: 'best-selling' %}
+    {% elsif sort_by == 'title-ascending' %}
+      {% assign products = collection.products | sort: 'title' %}
+    {% elsif sort_by == 'title-descending' %}
+      {% assign products = collection.products | sort: 'title' | reverse %}
+    {% elsif sort_by == 'price-ascending' %}
+      {% assign products = collection.products | sort: 'price' %}
+    {% elsif sort_by == 'price-descending' %}
+      {% assign products = collection.products | sort: 'price' | reverse %}
+    {% elsif sort_by == 'created-at' %}
+      {% assign products = collection.products | sort: 'created_at' %}
+    {% else %}
+      {% assign products = collection.products %} 
+    {% endif %}
+    
+    {% for product in products %}
       <div class="collection-product">
         <a href="{{ product.url }}" class="collection-product-anchor">
           <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -84,7 +145,7 @@
       </div>
       <form class="popup-filter-form">
 
-        <div class="filter-current-wrapper">
+        {% comment %} <div class="filter-current-wrapper">
           {%- for filter in collection.filters -%}
               {%- for filter_value in filter.active_values -%}
                 <p class="fs-14 cl-black-50 underline filter-current">
@@ -119,9 +180,47 @@
                 </p>
               {%- endfor -%}
           {%- endfor -%}
-        </div>
+        </div> {% endcomment %}
 
         {%- for filter in collection.filters -%}
+          {% if filter.label == 'Availability' %}
+            <div>
+              <ul>
+                {%- for filter_value in filter.values -%}
+                  {% if filter_value.label == 'In stock' %}
+                    <li class="btn-filter-trigger" style="display: flex">
+  
+                        <label class="switch-avail" for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+  
+                          <span class="fs-14 txt-500">{{ filter.label }}</span>
+  
+                          <div class="switch">
+                            <div class="switch-toggle">
+                              <input type="checkbox"
+                                name="{{ filter_value.param_name }}"
+                                value="{{ filter_value.value }}"
+                                id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                                class="switch switch-cbox"
+                                {% comment %} onclick="this.form.submit();"  {% endcomment %}
+                                {% if filter_value.active -%}checked{%- endif %}
+                                {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                              >
+                            </div>
+                          </div>
+  
+                        </label>
+  
+                    </li>
+                  {% endif %}
+                {%- endfor -%}
+              </ul>
+              
+              <div>
+                <input type="submit" value="Apply" hidden>
+              </div>
+  
+              </div>
+          {% endif %}
           {% if filter.label != 'Availability' %}
             <details open>
               <summary>
