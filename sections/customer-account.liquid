@@ -27,11 +27,21 @@
           <span class="order-number">Order #{{ order.name }}</span>
           <span class="order-date">{{ order.created_at | date: "%B %d, %Y" }}</span>
         </div>
+        <ul>
+            {% for line_item in order.line_items %}
+              <li>
+                <strong>Product:</strong> {{ line_item.title }}
+                <br>
+                <strong>Quantity:</strong> {{ line_item.quantity }}
+                <br>
+                <strong>Price:</strong> {{ line_item.price | money }}
+              </li>
+            {% endfor %}
+          </ul>
         <div class="order-details">
           <span class="order-total">Total: {{ order.total_price | money }}</span>
           <span class="order-status">Status: {{ order.financial_status }}</span>
         </div>
-        <a href="{{ order.order_url }}" class="view-order">View Order</a>
       </div>
     {% endfor %}
   </div>
