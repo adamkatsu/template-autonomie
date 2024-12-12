@@ -20,8 +20,10 @@
       {{ content_for_layout }}
     </main>
     {% section 'cart-drawer' %}
+    {% section 'navbar-overlay' %}
 
     {%- sections 'footer-group' -%}
+    <script src="{{ 'header.js' | asset_url }}"></script>
     <script src="{{ "cart-drawer.js" |  asset_url }}"></script>
     <script src="{{ "localization.js" |  asset_url }}"></script>
     {{ 'main.js' | asset_url | script_tag }}

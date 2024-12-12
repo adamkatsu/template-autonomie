@@ -24,6 +24,12 @@ searchTrigger.addEventListener('click', () => {
   navOverlay.classList.add('show-transparent');
   navbarCont.style.zIndex = 999;
 })
+searchMenu.addEventListener('click', (e) => {
+  e.stopPropagation();
+})
+shopMenu.addEventListener('click', (e) => {
+  e.stopPropagation();
+})
 // searchMenu.addEventListener('mouseleave', () => {
 //   searchMenu.classList.remove('dropdown-active');
 //   navOverlay.classList.remove('show');
