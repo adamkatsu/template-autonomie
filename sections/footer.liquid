@@ -99,9 +99,9 @@
     </select>
   </form>
 
-  <form action="{{ shop.url }}" method="get" id="currency-selector-form">
+  <form id="currency-selector-form">
   <label for="currency-selector">Choose Currency:</label>
-  <select id="currency-selector" name="currency" onchange="this.form.submit()">
+  <select id="currency-selector" name="currency">
     {% for currency in shop.enabled_currencies %}
       <option value="{{ currency.iso_code }}" {% if currency.iso_code == shop.currency %}selected{% endif %}>
         {{ currency.iso_code }}
@@ -110,11 +110,29 @@
   </select>
 </form>
 
-  
-  
-  
-
 </div>
+
+<script>
+
+document.getElementById('currency-selector').addEventListener('change', function(event) {
+    var selectedCurrency = event.target.value;
+    
+    // Set the selected currency without reloading the page
+    fetch('/cart/update.js', {
+      method: 'POST',
+      body: JSON.stringify({ currency: selectedCurrency }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Optionally update the page to reflect the new currency, e.g., update price display
+      location.reload();  // Reload the page to apply the new currency to the store
+    })
+    .catch(error => console.error('Error:', error));
+  });
+</script>
 
 {% schema %}
   {
