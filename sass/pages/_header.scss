@@ -21,7 +21,7 @@
     }
   }
   &:has(.navbar-white) {
-    position: fixed;
+    position: sticky;
     background-color: #ffffff;
     color: #111111;
     border-bottom: 1px solid rgba(17, 17, 17, 0.1);
