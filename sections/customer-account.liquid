@@ -1,47 +1,10 @@
-{% comment %} <div class="container customer-account-cont">
-
-  <a href="{{ routes.account_logout_url }}">Logout</a>
-  <h1>My Account</h1>
-  {{ customer.first_name }}
-  {{ customer.email }}
-  {{ customer.default_address }}
-
-  <div>
-    <h2>Order History</h2>
-    {% if customer.orders_count > 0 %}
-      <ul>
-        {% for order in customer.orders %}
-          {{ order. }}
-          <li>
-            <strong>Order #{{ order.name }}</strong> - Placed on {{ order.created_at | date: "%B %d, %Y" }}
-            <ul>
-              {% for line_item in order.line_items %}
-                <li>
-                  <strong>Product:</strong> {{ line_item.title }}
-                  <br>
-                  <strong>Quantity:</strong> {{ line_item.quantity }}
-                  <br>
-                  <strong>Price:</strong> {{ line_item.price | money }}
-                </li>
-              {% endfor %}
-            </ul>
-            <p><strong>Total:</strong> {{ order.total_price | money }}</p>
-            <p><strong>Status:</strong> {{ order.fulfillment_status | default: "Pending" }}</p>
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p>You haven't placed any orders yet.</p>
-    {% endif %}
-  </div>
-
-</div> {% endcomment %}
-
 <div class="container customer-account-cont">
+  
   <div class="customer-account-head">
     <h1>Your Account</h1>
     <a href="{{ routes.account_logout_url }}">Logout</a>
   </div>
+
   <div class="customer-account-main">
     {{ customer.first_name }}
     {{ customer.email }}
@@ -53,21 +16,10 @@
         {% if address.address2 %}<p>{{ address.address2 }}</p>{% endif %}
         <p>{{ address.city }}, {{ address.province }} {{ address.zip }}</p>
         <p>{{ address.country }}</p>
-        
-        <!-- Edit Address Link -->
-        <a href="/account/addresses/{{ address.id }}">Edit</a>
-  
-        <!-- Delete Address Link -->
-        <form method="post" action="/account/addresses/{{ address.id }}">
-          <input type="hidden" name="_method" value="delete">
-          <button type="submit">Delete</button>
-        </form>
       </div>
     {% endfor %}
-  
-    <!-- Add New Address Link -->
-    <a href="/account/addresses/new">Add a New Address</a>
   </div>
+
 </div>
 
 {% schema %}
