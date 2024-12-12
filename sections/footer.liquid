@@ -2,8 +2,12 @@
   <div class="footer-top">
     <div class="footer-newsletter">
       <div class="footer-newsletter-head">
-        <span class="txt-500 fs-16 cl-white">Newsletter Sign Up</span>
-        <p class="txt-400 fs-16 cl-white-60">Join the inner Circle for exclusive updates, early access to new drops, and members-only offers.</p>
+        <span class="txt-500 fs-16 cl-white">
+          {{ section.settings.newsletter_title }}
+        </span>
+        <p class="txt-400 fs-16 cl-white-60">
+          {{ section.settings.newsletter_description }}
+        </p>
       </div>
       {% form 'customer', class: 'footer-form'%}
         {% if form.errors %}
@@ -38,45 +42,33 @@
     </div>
     <div class="footer-links">
       <div class="footer-links-list-wrapper">
-        <span class="txt-500 fs-16 cl-white">Home</span>
+        <span class="txt-500 fs-16 cl-white">{{ section.settings.group_one_title }}</span>
         <ul class="footer-links-list">
-          <li class="footer-links-item">
-            <a href="/pages/brand">About Us</a>
-          </li>
-          <li class="footer-links-item">
-            <a href="/pages/contact">Contact Us</a>
-          </li>
+          {% for link in linklists['main-menu'].links %}
+            <li class="footer-links-item">
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
       <div class="footer-links-list-wrapper">
-        <span class="txt-500 fs-16 cl-white">Platform</span>
+        <span class="txt-500 fs-16 cl-white">{{ section.settings.group_two_title }}</span>
         <ul class="footer-links-list">
-          <li class="footer-links-item">
-            <a href="/pages/terms-of-service">Terms of Service</a>
-          </li>
-          <li class="footer-links-item">
-            <a href="/pages/privacy-policy">Privacy Policy</a>
-          </li>
-          <li class="footer-links-item">
-            <a href="/pages/personal-information">Personal Information</a>
-          </li>
+          {% for link in linklists['main-menu'].links %}
+            <li class="footer-links-item">
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
       <div class="footer-links-list-wrapper">
-        <span class="txt-500 fs-16 cl-white">Social</span>
+        <span class="txt-500 fs-16 cl-white">{{ section.settings.group_three_title }}</span>
         <ul class="footer-links-list">
-          <li class="footer-links-item">
-            <a href="#">Instagram</a>
-          </li>
-          <li class="footer-links-item">
-            <a href="#">Twitter</a>
-          </li>
-          <li class="footer-links-item">
-            <a href="#">Facebook</a>
-          </li>
-          <li class="footer-links-item">
-            <a href="#">LinkedIn</a>
-          </li>
+          {% for link in linklists['main-menu'].links %}
+            <li class="footer-links-item">
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
         </ul>
       </div>
     </div>
@@ -130,7 +122,36 @@
     "tag": "section",
     "class": "footer",
     "settings": [
-      
+      {
+        "type": "text",
+        "id": "newsletter_title",
+        "label": "Newsletter Title",
+        "default": "Newsletter Sign Up"
+      },
+      {
+        "type": "textarea",
+        "id": "newsletter_description",
+        "label": "Newsletter Description",
+        "default": "Join the inner Circle for exclusive updates, early access to new drops, and members-only offers."
+      },
+      {
+        "type": "text",
+        "id": "group_one_title",
+        "label": "Group One Title",
+        "default": "Home"
+      },
+      {
+        "type": "text",
+        "id": "group_two_title",
+        "label": "Group Two Title",
+        "default": "Platform"
+      },
+      {
+        "type": "text",
+        "id": "group_three_title",
+        "label": "Group Three Title",
+        "default": "Social"
+      }
     ],
     "blocks": [
     ]
