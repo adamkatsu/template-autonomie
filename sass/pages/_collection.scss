@@ -6,6 +6,8 @@
 
 .collection {
   position: relative;
+  padding-top: 64px;
+  padding-bottom: 64px;
 
   &-cont {
     @include flex-box(column, flex-start, stretch, 0px);
@@ -102,7 +104,7 @@
       bottom: -100px;
       left: 8px;
       right: 8px;
-      top: absolute;
+      top: auto;
       background-color: #ffffff;
       padding: 16px;
       opacity: 0;
@@ -112,6 +114,9 @@
       bottom: 8px;
       opacity: 1;
       transition: all .5s ease;
+    }
+    &-mobile {
+      display: none;
     }
     &-title {
       @include flex-box(column, flex-start, flex-start, 10px);
@@ -179,6 +184,64 @@
     }
   }
 }
+@media(max-width: 768px) {
+  .collection {
+    padding-top: 32px;
+
+    &-product {
+      aspect-ratio: 23 / 40;
+
+      &:hover img.hover-image {
+        opacity: 0;
+      }
+      &:hover img.featured-image {
+        opacity: 1;
+      }
+      &-details {
+        display: none;
+      }
+      &-mobile {
+        @include flex-box(column, flex-start, center, 8px);
+        background-color: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        padding: 12px;
+        padding-bottom: 24px;
+      }
+    }
+    &-head {
+      flex-direction: column;
+      gap: 24px;
+    }
+    &-title {
+      width: 100%;
+      text-align: center;
+    }
+    &-amount {
+      display: none;
+    }
+    &-filter {
+      width: 100%;
+      justify-content: space-between;
+
+      #filter-show {
+        padding: 16px 0;
+      }
+    }
+    &-product {
+      width: calc(50% - 4px); 
+    }
+  }
+}
+@media(max-width: 480px) {
+  .collection-product-anchor {
+    padding: 8px;
+  }
+}
+
 .filter-variant {
   padding: 32px 0;
   @include flex-box(column, flex-start, stretch, 16px);

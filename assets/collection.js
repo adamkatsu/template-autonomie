@@ -1,21 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
   const productImages = document.querySelectorAll(".collection-product-image");
 
-  productImages.forEach((img) => {
-    const hoverSrc = img.getAttribute("data-hover");
-    const featuredSrc = img.getAttribute("data-featured");
-
-
-    img.parentElement.addEventListener("mouseover", () => {
-      if (hoverSrc) {
-        img.src = hoverSrc;
-      }
+  if (window.matchMedia("(min-width: 640px)").matches) {
+    // Run your JavaScript here
+    productImages.forEach((img) => {
+      const hoverSrc = img.getAttribute("data-hover");
+      const featuredSrc = img.getAttribute("data-featured");
+  
+  
+      img.parentElement.addEventListener("mouseover", () => {
+        if (hoverSrc) {
+          img.src = hoverSrc;
+        }
+      });
+  
+      img.parentElement.addEventListener("mouseout", () => {
+        img.src = featuredSrc;
+      });
     });
-
-    img.parentElement.addEventListener("mouseout", () => {
-      img.src = featuredSrc;
-    });
-  });
+  }
+  
 
   // Show / Hide Filter Modal
   const filterShow = document.getElementById('filter-show');
