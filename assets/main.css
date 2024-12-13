@@ -142,6 +142,41 @@ a {
   font-size: 64px;
 }
 
+@media (max-width: 480px) {
+  .fs-12 {
+    font-size: 10px;
+  }
+  .fs-14 {
+    font-size: 12px;
+  }
+  .fs-16 {
+    font-size: 14px;
+  }
+  .fs-18 {
+    font-size: 16px;
+  }
+  .fs-20 {
+    font-size: 18px;
+  }
+  .fs-24 {
+    font-size: 20px;
+  }
+  .fs-32 {
+    font-size: 28px;
+  }
+  .fs-40 {
+    font-size: 32px;
+  }
+  .fs-48 {
+    font-size: 40px;
+  }
+  .fs-56 {
+    font-size: 48px;
+  }
+  .fs-64 {
+    font-size: 56px;
+  }
+}
 .cl-white {
   color: #ffffff;
 }
@@ -393,6 +428,11 @@ a {
   padding: 0;
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 72px 24px;
+  }
+}
 .container {
   width: 100%;
   max-width: 1392px;
@@ -915,6 +955,11 @@ a {
   max-width: 926px;
 }
 
+@media (max-width: 768px) {
+  .brand-hero {
+    padding: 72px 24px;
+  }
+}
 .image-full {
   padding: 0px 24px;
 }
@@ -923,6 +968,11 @@ a {
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .image-full {
+    padding: 0px;
+  }
+}
 .body-copy-cont {
   display: flex;
   flex-direction: row;
@@ -944,6 +994,23 @@ a {
   max-width: 810px;
 }
 
+@media (max-width: 768px) {
+  .body-copy-cont {
+    flex-direction: column;
+    align-items: center;
+  }
+  .body-copy-title,
+  .body-copy-content {
+    width: 100%;
+    align-items: center;
+  }
+  .body-copy-title p,
+  .body-copy-title span,
+  .body-copy-content p,
+  .body-copy-content span {
+    text-align: center;
+  }
+}
 .image-half {
   padding: 0px 24px;
 }
@@ -959,6 +1026,14 @@ a {
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .image-half {
+    padding: 0px;
+  }
+  .image-half-cont {
+    gap: 0;
+  }
+}
 .content-blocks {
   padding: 24px;
 }
@@ -1001,6 +1076,25 @@ a {
   max-width: 496px;
 }
 
+@media (max-width: 768px) {
+  .content-blocks {
+    padding: 0px;
+  }
+  .content-blocks-content {
+    padding: 48px 32px;
+  }
+}
+@media (max-width: 640px) {
+  .content-blocks-item {
+    flex-direction: column;
+  }
+  .content-blocks-item.flex-row-rvs {
+    flex-direction: column;
+  }
+  .content-blocks-img, .content-blocks-content {
+    width: 100%;
+  }
+}
 .contact {
   padding: 140px 24px 76px;
 }

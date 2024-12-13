@@ -19,6 +19,11 @@
     }
   }
 }
+@media(max-width: 768px) {
+  .section {
+    padding: 72px 24px;
+  }
+}
 .container {
   width: 100%;
   max-width: 1392px;
