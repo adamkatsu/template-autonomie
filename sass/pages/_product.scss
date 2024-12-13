@@ -106,6 +106,22 @@
     }
   }
 }
+@media(max-width: 640px) {
+  .product-quantity {
+    & > * {
+      width: 36px;
+      height: 36px;
+    }
+  }
+}
+@media(max-width: 480px) {
+  .product-quantity {
+    & > * {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
 
 .product-accordion {
   @include flex-box(column, flex-start, stretch, 0);

@@ -86,3 +86,25 @@
     @include flex-box(row, space-between, flex-start, 80px);
   }
 }
+@media(max-width: 768px) {
+  .footer {
+    &-logo {
+      height: 40px;
+    }
+  }
+}
+@media(max-width: 640px) {
+  .footer {
+    &-top {
+      flex-direction: column;
+    }
+    &-newsletter {
+      width: 100%;
+      max-width: none;
+    }
+    &-links {
+      width: 100%;
+      max-width: none;
+    }
+  }
+}
