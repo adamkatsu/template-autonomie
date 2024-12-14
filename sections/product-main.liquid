@@ -5,6 +5,20 @@
       <img src="{{ image | image_url: width: 1920 }}" alt="">
     {% endfor %}
   </div>
+  <div class="product-main-slider">
+    <div class="gallery-wrapper">
+      <div class="swiper swiper-product">
+        <div class="swiper-wrapper swiper-wrapper-product">
+          {% for image in product.images %}
+            <div class="swiper-slide swiper-slide-product">
+              <img src="{{ image | image_url: width: 1920 }}" alt="">
+            </div>
+          {% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </div>
   <div class="product-main-content">
     
     <div class="product-title-wrapper">
@@ -117,6 +131,23 @@
     
   </div>
 </div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".swiper-product", {
+    spaceBetween: 16,
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    autoplay: {
+      delay: 5000,
+    },
+    loop: true
+  });
+</script>
 
 <script src="{{ "product-main.js" |  asset_url }}"></script>
 

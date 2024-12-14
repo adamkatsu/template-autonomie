@@ -1,3 +1,6 @@
+
+
+
 // Quantity Adjustment
 const decreaseBtn = document.getElementById("decrease-quantity");
 const increaseBtn = document.getElementById("increase-quantity");
