@@ -8,7 +8,6 @@
   <div class="customer-account-main">
 
   <div class="customer-order-history">
-    <h2 class="txt-500 fs-20 cl-black-60">Your Orders</h2>
 
     {% for order in customer.orders %}
       <div class="customer-order">
@@ -16,20 +15,21 @@
           <span class="order-number fs-24 txt-500">Order #{{ order.name }}</span>
           <span class="order-date fs-16 cl-black-60">{{ order.created_at | date: "%B %d, %Y" }}</span>
         </div>
-        <ul>
+        <ul class="customer-order-list">
             {% for line_item in order.line_items %}
               <li>
-                <strong>Product:</strong> {{ line_item.title }}
-                <br>
-                <strong>Quantity:</strong> {{ line_item.quantity }}
-                <br>
-                <strong>Price:</strong> {{ line_item.price | money }}
+                <img src="{{ line_item.image.src |  image_url: width: 480 }}" alt="">
+                <div class="customer-order-item-details">
+                  <span>Product: {{ line_item.title }}</span>
+                  <span>Quantity: {{ line_item.quantity }}</span>
+                  <span>Price: {{ line_item.price | money }}</span>
+                </div>
               </li>
             {% endfor %}
           </ul>
         <div class="customer-order-details">
-          <span class="customer-order-total">Total: {{ order.total_price | money }}</span>
-          <span class="customer-order-status">Status: {{ order.financial_status }}</span>
+          <span class="customer-order-status txt-500 fs-16 cl-black-60">Status: {{ order.financial_status }}</span>
+          <span class="customer-order-total txt-500 fs-20">Total: {{ order.total_price | money }}</span>
         </div>
       </div>
     {% endfor %}
@@ -38,20 +38,35 @@
 
   <div class="customer-account-main-details">
     <div class="customer-name">
-      <span>{{ customer.first_name }} {{ customer.last_name }}</span>
-      <span>{{ customer.email }}</span>
+      <span class="txt-500 fs-24">{{ customer.first_name }} {{ customer.last_name }}</span>
+      <span class="txt-500 fs-14 cl-black-60">{{ customer.email }}</span>
     </div>
     
     <div class="customer-address">
       {% for address in customer.addresses %}
-        <span class="fs-24 txt-500">Address:</span>
+
+        <span class="fs-20 txt-500">Address:</span>
+
         <div class="address">
-          <p>{{ address.first_name }} {{ address.last_name }}</p>
-          <p>{{ address.address1 }}</p>
-          {% if address.address2 %}<p>{{ address.address2 }}</p>{% endif %}
-          <p>{{ address.city }}, {{ address.province }} {{ address.zip }}</p>
-          <p>{{ address.country }}</p>
+          <p class="txt-500 fs-14 cl-black-60">
+            {{ address.first_name }} {{ address.last_name }}
+          </p>
+          <p class="txt-500 fs-14 cl-black-60">
+            {{ address.address1 }}
+          </p>
+          {% if address.address2 %}
+            <p class="txt-500 fs-14 cl-black-60">
+              {{ address.address2 }}
+            </p>
+          {% endif %}
+          <p class="txt-500 fs-14 cl-black-60">
+            {{ address.city }}, {{ address.province }} {{ address.zip }}
+          </p>
+          <p class="txt-500 fs-14 cl-black-60"> 
+            {{ address.country }}
+          </p>
         </div>
+
       {% endfor %}
     </div>
   </div>
