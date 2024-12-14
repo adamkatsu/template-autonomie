@@ -103,6 +103,20 @@
     }
   }
 }
+@media(max-width: 640px) {
+  .cart-drawer {
+    .drawer {
+      width: 100%;
+
+      img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+
+}
+
 
 
 // Localization
