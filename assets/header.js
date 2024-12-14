@@ -4,6 +4,11 @@ const shopMenu = document.querySelector('.dropdown-left');
 const searchTrigger = document.getElementById('nav-search');
 const searchMenu = document.querySelector('.dropdown-right');
 
+const navMenuTrigger = document.querySelectorAll('.nav-menu-button');
+const navMenuClose = document.getElementById('nav-menu-close');
+const navMenuWrapper = document.getElementById('nav-menu-mobile');
+const navSubmenuTrigger = document.querySelectorAll('.navbar-mobile-dropdown');
+
 const cartTrigger = document.getElementById('nav-cart');
 const userTrigger = document.getElementById('nav-user');
 
@@ -23,7 +28,32 @@ searchTrigger.addEventListener('click', () => {
   searchMenu.classList.add('dropdown-active');
   navOverlay.classList.add('show-transparent');
   navbarCont.style.zIndex = 999;
+});
+
+
+navMenuTrigger.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    navMenuWrapper.classList.add('menu-active');
+    navOverlay.classList.add('show-transparent');
+    navbarCont.style.zIndex = 999;
+  });
 })
+navMenuClose.addEventListener('click', (e) => {
+  navOverlay.classList.remove('show');
+  navOverlay.classList.remove('show-transparent');
+  navMenuWrapper.classList.remove('menu-active');
+  navbarCont.style.zIndex = 9;
+})
+navMenuWrapper.addEventListener('click', (e) => {
+  e.stopPropagation();
+})
+navSubmenuTrigger.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    btn.nextElementSibling.classList.toggle('sublist-show');
+  })
+})
+
+
 searchMenu.addEventListener('click', (e) => {
   e.stopPropagation();
 })
@@ -34,10 +64,13 @@ shopMenu.addEventListener('click', (e) => {
 //   searchMenu.classList.remove('dropdown-active');
 //   navOverlay.classList.remove('show');
 // })
+
+
 navOverlay.addEventListener('click', () => {
   shopMenu.classList.remove('dropdown-active');
   navOverlay.classList.remove('show');
   navOverlay.classList.remove('show-transparent');
   searchMenu.classList.remove('dropdown-active');
+  navMenuWrapper.classList.remove('menu-active');
   navbarCont.style.zIndex = 9;
 })
