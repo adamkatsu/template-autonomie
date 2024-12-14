@@ -100,6 +100,19 @@
     @include flex-box(column, center, center, 0);
   }
 }
+@media(max-width: 768px) {
+  .home-section-two {
+    &-cont {
+      flex-direction: column;
+      height: auto;
+      max-height: none;
+    }
+    .home-section-half {
+      width: 100%;
+      height: 400px;
+    }
+  }
+}
 
 .home-section-three {
   width: 100%;
@@ -125,6 +138,14 @@
     height: 100%;
     @include flex-box(column, flex-end, center, 0);
     padding-bottom: 72px;
+  }
+}
+@media(max-width: 768px) {
+  .home-section-four {
+    .home-section-thirds {
+      min-height: 400px;
+      justify-content: center;
+    }
   }
 }
 
