@@ -4,7 +4,7 @@
       <ul class="navbar-menu">
         {% for link in linklists['main-menu'].links %}
           <li class="navbar-menu-item txt-400 fs-14 cl-white">
-            <a href="{{ link.url }}" id="nav-shop">{{ link.title }}</a>
+            <a href="{{ link.url }}" id="nav-{{ link.title |  downcase }}">{{ link.title }}</a>
           </li>
         {% endfor %}
       </ul>
@@ -41,6 +41,13 @@
 
       {% endif %}
       
+    </div>
+    <div class="navbar-left-mobile">
+      <button class="nav-menu-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 8V7H20V8H3ZM20 12V13H3V12H20ZM3 17H20V18H3V17Z" fill="#ffffff"/>
+        </svg>
+      </button>
     </div>
     <div class="navbar-center">
       <a href="{{ routes.root_url }}">
@@ -132,6 +139,13 @@
       {% endif %}
       
     </div>
+    <div class="navbar-left-mobile">
+      <button class="nav-menu-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 8V7H20V8H3ZM20 12V13H3V12H20ZM3 17H20V18H3V17Z" fill="#111111"/>
+        </svg>
+      </button>
+    </div>
     <div class="navbar-center">
       <a href="{{ routes.root_url }}">
         <img src="https://cdn.shopify.com/s/files/1/0625/6263/1749/files/logo_black.png?v=1731811107" alt="" class="navbar-logo">
@@ -176,11 +190,6 @@
     </div>
 {% endif %}
 </div>
-
-
-
-
-
 
 
 {% schema %}
