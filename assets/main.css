@@ -2169,6 +2169,12 @@ a {
     width: calc(50% - 4px);
   }
 }
+@media (max-width: 640px) {
+  .collection-popup-filter {
+    height: 100%;
+    width: 100%;
+  }
+}
 @media (max-width: 480px) {
   .collection-product-anchor {
     padding: 8px;
