@@ -1,6 +1,3 @@
-
-
-
 // Quantity Adjustment
 const decreaseBtn = document.getElementById("decrease-quantity");
 const increaseBtn = document.getElementById("increase-quantity");
@@ -42,3 +39,26 @@ document.querySelectorAll('.product-accordion-head').forEach(header => {
     }
   });
 });
+
+// Size Chart
+
+const chartBtn = document.getElementById('btn-chart');
+const chartCloseBtn = document.getElementById('btn-chart-close');
+const chartWrapper = document.getElementById('product-chart');
+const chartCont = document.getElementById('product-chart-cont');
+
+
+chartBtn.addEventListener('click', () => {
+  chartWrapper.classList.add('chart-show');
+})
+chartWrapper.addEventListener('click', () => {
+  chartWrapper.classList.remove('chart-show');
+})
+chartCloseBtn.addEventListener('click', () => {
+  chartWrapper.classList.remove('chart-show');
+})
+chartCont.addEventListener('click', (e) => {
+  e.stopPropagation();
+})
+
+

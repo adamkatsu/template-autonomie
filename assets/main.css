@@ -1882,6 +1882,78 @@ a {
   transition: all 0.3s ease;
 }
 
+.product-chart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  display: none;
+}
+.product-chart.chart-show {
+  display: flex;
+}
+.product-chart-cont {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
+  max-width: 100%;
+}
+.product-chart-head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  padding: 24px 32px;
+  border-bottom: 1px solid #e3e3e3;
+}
+.product-chart-close {
+  background-color: #fff;
+  border: none;
+}
+.product-chart-main {
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  overflow-x: scroll;
+}
+.product-chart-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0px;
+  border-right: 1px solid #999;
+}
+.product-chart-col:first-child {
+  border-left: 1px solid #999;
+}
+.product-chart-item {
+  width: 120px;
+  padding: 24px 16px;
+  border-bottom: 1px solid #999999;
+}
+.product-chart-item:first-child {
+  border-top: 1px solid #999;
+  font-weight: 600;
+}
+
 .cart {
   width: 100%;
 }
