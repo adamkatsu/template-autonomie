@@ -535,6 +535,9 @@ a {
   border: none;
   background-color: transparent;
 }
+.navbar-mobile {
+  display: none;
+}
 
 @media (max-width: 768px) {
   .navbar-left {

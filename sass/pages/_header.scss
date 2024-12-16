@@ -76,6 +76,9 @@
       background-color: transparent;
     }
   }
+  &-mobile {
+    display: none;
+  }
 }
 @media(max-width: 768px) {
   .navbar {    
