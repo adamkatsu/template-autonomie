@@ -312,6 +312,11 @@
   }
   
 }
+@media(max-width: 480px) {
+  .filter-variant-list {
+    padding-right: 0px;
+  }
+}
 .btn-variant {
   background-color: transparent;
   font-size: 14px;
@@ -357,6 +362,7 @@
   width: 16px;
   height: 16px;
   border-radius: 100%;
+  flex-shrink: 0;
 }
 .show-more-btn {
   position: absolute;
@@ -366,6 +372,14 @@
   text-decoration: underline;
   font-size: 14px;
   line-height: 120%;
+}
+@media(max-width: 480px) {
+  .show-more-btn {
+    margin-top: 16px;
+    position: relative;
+    right: 0px;
+  }
+
 }
 .filter-current:hover {
   color: #111111;

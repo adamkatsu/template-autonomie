@@ -1017,7 +1017,7 @@ a {
   max-width: 1158px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: stretch;
   gap: 0;
 }
@@ -1069,7 +1069,7 @@ a {
   max-width: 1158px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: stretch;
   gap: 0;
 }
@@ -2449,6 +2449,11 @@ a {
   color: #111111;
 }
 
+@media (max-width: 480px) {
+  .filter-variant-list {
+    padding-right: 0px;
+  }
+}
 .btn-variant {
   background-color: transparent;
   font-size: 14px;
@@ -2492,6 +2497,7 @@ a {
   width: 16px;
   height: 16px;
   border-radius: 100%;
+  flex-shrink: 0;
 }
 
 .show-more-btn {
@@ -2504,6 +2510,13 @@ a {
   line-height: 120%;
 }
 
+@media (max-width: 480px) {
+  .show-more-btn {
+    margin-top: 16px;
+    position: relative;
+    right: 0px;
+  }
+}
 .filter-current:hover {
   color: #111111;
 }
