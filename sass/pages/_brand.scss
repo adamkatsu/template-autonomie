@@ -13,7 +13,14 @@
 }
 @media(max-width: 768px) {
   .brand-hero {
-    padding: 72px 24px;
+    padding: 32px 16px 72px;
+
+    .fs-18 {
+      font-size: 14px;
+    }
+    .fs-24 {
+      font-size: 18px;
+    }
   }
 }
 
@@ -29,7 +36,16 @@
 }
 @media(max-width: 768px) {
   .image-full {
-    padding: 0px;
+    padding: 16px;
+
+    &-cont {
+      .img-full {
+        width: 100%;
+        min-height: 343px;
+        object-fit: cover;
+        object-position: 30% 50%;
+      }
+    }
   }
 }
 
@@ -49,19 +65,27 @@
   }
 }
 @media(max-width: 768px) {
+  .body-copy {
+    padding: 16px 16px 32px;
+
+    .fs-32 {
+      font-size: 28px;
+    }
+  }
   .body-copy-cont {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    gap: 80px;
   }
   .body-copy-title,
   .body-copy-content {
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
 
-    p,
-    span {
-      text-align: center;
-    }
+    // p,
+    // span {
+    //   text-align: center;
+    // }
   }
 }
 
@@ -78,10 +102,14 @@
 }
 @media(max-width: 768px) {
   .image-half {
-    padding: 0px;
+    padding: 32px 16px;
 
     &-cont {
-      gap: 0;
+      gap: 2px;
+    .img-half {
+      height: 343px;
+      object-fit: cover;
+    }
     }
   }
 }
@@ -132,6 +160,10 @@
     &-img,
     &-content {
       width: 100%;
+      padding:0 16px;
     } 
+    &-content {
+      padding: 32px 16px;
+    }
   }
 }

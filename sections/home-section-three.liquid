@@ -1,11 +1,18 @@
 <div class="container container-full home-section-three-cont">
   <img src="{{ section.settings.background_image |  image_url: width: 1920 }}" alt="" class="bg-full">
-  <div class="home-section-title items-center">
+  <div class="home-section-title">
     {% if section.settings.product_one %}
       {% assign product_one = all_products[section.settings.product_one] %}
-      <a href="{{ product_one.url }}" class="home-btn items-center">
+      <a href="{{ product_one.url }}" class="home-btn align-bottom">
         <span class="txt-400 fs-14 cl-white-50 uppercase">{{ section.settings.product_one_text }}</span>
         <span class="txt-500 fs-20 cl-white">{{ product_one.title }}</span>
+      </a>
+    {% endif %}
+    {% if section.settings.product_two %}
+      {% assign product_two = all_products[section.settings.product_two] %}
+      <a href="{{ product_two.url }}" class="home-btn align-top home-hero-mobile-hidden">
+        <span class="txt-400 fs-14 cl-white-50 uppercase">{{ section.settings.product_two_text }}</span>
+        <span class="txt-500 fs-20 cl-white">{{ product_two.title }}</span>
       </a>
     {% endif %}
   </div>
