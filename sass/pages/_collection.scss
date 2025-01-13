@@ -154,7 +154,7 @@
     height: 100vh;
     background-color: rgba(0,0,0,0.4);
     backdrop-filter: blur(1px);
-    z-index: 999;
+    z-index: 999999;
     opacity: 0;
     pointer-events: none;
     transition: opacity .2s ease;
@@ -245,6 +245,11 @@
   .collection-popup-filter {
     height: 100%;
     width: 100%;
+    gap: 40px;
+
+    &-head {
+      padding: 0px;
+    }
   }
 }
 @media(max-width: 480px) {
