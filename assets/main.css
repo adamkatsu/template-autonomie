@@ -2578,6 +2578,11 @@ a {
   max-height: 100%;
   overflow: scroll;
   margin-bottom: 32px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.popup-filter-form::-webkit-scrollbar {
+  display: none;
 }
 .popup-filter-form details {
   border-bottom: 1px solid #E3E3E3;

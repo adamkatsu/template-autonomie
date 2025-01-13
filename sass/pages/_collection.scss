@@ -346,7 +346,12 @@
     max-height: 100%;
     overflow: scroll;
     margin-bottom: 32px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 
+    &::-webkit-scrollbar {
+      display: none;
+    }
     details {
       border-bottom: 1px solid #E3E3E3;
       padding: 32px 0;
