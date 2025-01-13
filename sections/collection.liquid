@@ -17,59 +17,59 @@
           <path d="M7 11V4" stroke="#292D32" stroke-width="0.875" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
-      {% comment %} <form style="cursor: pointer;">
-        {%- for filter in collection.filters -%}
-        {% if filter.label == 'Availability' %}
-          <div>
-            <ul>
-              {%- for filter_value in filter.values -%}
-                {% if filter_value.label == 'In stock' %}
-                  <li class="btn-filter-trigger">
-
-                      <label class="switch-avail" for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
-
-                        <span class="fs-14 txt-500">{{ filter.label }}</span>
-
-                        <div class="switch">
-                          <div class="switch-toggle">
-                            <input type="checkbox"
-                              name="{{ filter_value.param_name }}"
-                              value="{{ filter_value.value }}"
-                              id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
-                              class="switch switch-cbox"
-                              onclick="this.form.submit();" 
-                              {% if filter_value.active -%}checked{%- endif %}
-                              {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
-                            >
-                          </div>
-                        </div>
-
-                      </label>
-
-                  </li>
-                {% endif %}
-              {%- endfor -%}
-            </ul>
-            
-            <div>
-              <input type="submit" value="Apply" hidden>
-            </div>
-
-            </div>
-        {% endif %}
-        {%- endfor -%}
-      </form> {% endcomment %}
 
       <form action="{{ current_collection.url }}" method="get" class="form-sort">
-        <select name="sort_by" id="sort-by" class="btn-filter-trigger" onchange="this.form.submit()">
-          <option value="" {% if current_collection.sort_by == nil %}selected="selected"{% endif %}>Sort By</option>
-          <option value="best-selling" {% if current_collection.sort_by == 'best-selling' %}selected="selected"{% endif %}>Best Selling</option>
-          <option value="title-ascending" {% if current_collection.sort_by == 'title-ascending' %}selected="selected"{% endif %}>Title (A-Z)</option>
-          <option value="title-descending" {% if current_collection.sort_by == 'title-descending' %}selected="selected"{% endif %}>Title (Z-A)</option>
-          <option value="price-ascending" {% if current_collection.sort_by == 'price-ascending' %}selected="selected"{% endif %}>Price: Low to High</option>
-          <option value="price-descending" {% if current_collection.sort_by == 'price-descending' %}selected="selected"{% endif %}>Price: High to Low</option>
-          <option value="created-at" {% if current_collection.sort_by == 'created-at' %}selected="selected"{% endif %}>Date Added</option>
-        </select>
+        <div class="dropdown">
+          <div class="dropdown-trigger btn-filter-trigger">
+            Sort By
+            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.6199 5.7207L7.81655 9.52404C7.36738 9.9732 6.63238 9.9732 6.18322 9.52404L2.37988 5.7207" stroke="#111111" stroke-width="0.875" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="dropdown-options">
+            <div 
+              class="dropdown-option {% if current_collection.sort_by == nil %}selected{% endif %}" 
+              data-value="">
+              Featured
+            </div>
+            <div 
+              class="dropdown-option {% if current_collection.sort_by == 'best-selling' %}selected{% endif %}" 
+              data-value="best-selling">
+              Best Selling
+            </div>
+            <div 
+              class="dropdown-option {% if current_collection.sort_by == 'title-ascending' %}selected{% endif %}" 
+              data-value="title-ascending">
+              Alphabetically, A-Z
+            </div>
+            <div 
+              class="dropdown-option {% if current_collection.sort_by == 'title-descending' %}selected{% endif %}" 
+              data-value="title-descending">
+              Alphabetically, Z-A
+            </div>
+            <div 
+              class="dropdown-option {% if current_collection.sort_by == 'price-ascending' %}selected{% endif %}" 
+              data-value="price-ascending">
+              Price, Low to High
+            </div>
+            <div 
+              class="dropdown-option {% if current_collection.sort_by == 'price-descending' %}selected{% endif %}" 
+              data-value="price-descending">
+              Price, High to Low
+            </div>
+            <div 
+              class="dropdown-option {% if current_collection.sort_by == 'created-at-descending' %}selected{% endif %}" 
+              data-value="created-at-descending">
+              Date, Newest to Oldest
+            </div>
+            <div 
+              class="dropdown-option {% if current_collection.sort_by == 'created-at-ascending' %}selected{% endif %}" 
+              data-value="created-at-ascending">
+              Date, Oldest to Newest
+            </div>
+          </div>
+          <input type="hidden" name="sort_by" id="sort-by" value="{{ current_collection.sort_by }}">
+        </div>
       </form>
     </div>
   </div>
@@ -382,7 +382,61 @@
   </div>
 </div>
 
-
+<div class="sort-mobile">
+  <form action="{{ current_collection.url }}" method="get" class="form-sort form-mobile">
+    <div class="dropdown-mobile">
+      <div class="dropdown-mobile-title">
+        <span class="fs-18 uppercase">Sort By</span>
+        <div id="sort-mobile-hide" class="btn-variant sort-mobile-hide-btn">
+          <span class="fs-14 underline">Close</span>
+        </div>
+      </div>
+      <div class="dropdown-mobile-options">
+        <div 
+          class="dropdown-mobile-option {% if current_collection.sort_by == nil %}selected{% endif %}" 
+          data-value="">
+          Featured
+        </div>
+        <div 
+          class="dropdown-mobile-option {% if current_collection.sort_by == 'best-selling' %}selected{% endif %}" 
+          data-value="best-selling">
+          Best Selling
+        </div>
+        <div 
+          class="dropdown-mobile-option {% if current_collection.sort_by == 'title-ascending' %}selected{% endif %}" 
+          data-value="title-ascending">
+          Alphabetically, A-Z
+        </div>
+        <div 
+          class="dropdown-mobile-option {% if current_collection.sort_by == 'title-descending' %}selected{% endif %}" 
+          data-value="title-descending">
+          Alphabetically, Z-A
+        </div>
+        <div 
+          class="dropdown-mobile-option {% if current_collection.sort_by == 'price-ascending' %}selected{% endif %}" 
+          data-value="price-ascending">
+          Price, Low to High
+        </div>
+        <div 
+          class="dropdown-mobile-option {% if current_collection.sort_by == 'price-descending' %}selected{% endif %}" 
+          data-value="price-descending">
+          Price, High to Low
+        </div>
+        <div 
+          class="dropdown-mobile-option {% if current_collection.sort_by == 'created-at-descending' %}selected{% endif %}" 
+          data-value="created-at-descending">
+          Date, Newest to Oldest
+        </div>
+        <div 
+          class="dropdown-mobile-option {% if current_collection.sort_by == 'created-at-ascending' %}selected{% endif %}" 
+          data-value="created-at-ascending">
+          Date, Oldest to Newest
+        </div>
+      </div>
+      <input type="hidden" name="sort_by" id="sort-by-mobile" value="{{ current_collection.sort_by }}">
+    </div>
+  </form>
+</div>
 
 <script src="{{ "collection.js" |  asset_url }}"></script>
 
