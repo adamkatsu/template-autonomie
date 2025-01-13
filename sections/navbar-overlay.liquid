@@ -1,6 +1,9 @@
 <div class="navbar-overlay">
+{% if template == "index" %}
+  <div class="dropdown-left dropdown-transparent">
+{% else %}
   <div class="dropdown-left">
-    <span class="dropdown-left-title">Shop</span>
+{% endif %}
     <ul class="dropdown-left-list">
       {% for link in linklists['shop-categories-menu'].links %}
         <li class="dropdown-left-item">
@@ -8,6 +11,7 @@
         </li>
       {% endfor %}
     </ul>
+    <a href="{{ link.url }}" class="dropdown-left-link-last">{{ link.title }}</a>
   </div>
   <div class="dropdown-right">
     <form action="{{ routes.search_url }}" class="nav-search-wrapper">

@@ -455,7 +455,7 @@ a {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 9;
+  z-index: 99999;
   padding: 16px 24px;
   color: #ffffff;
 }
@@ -646,18 +646,25 @@ a {
   padding: 48px 24px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 32px;
   background-color: #ffffff;
-  width: 480px;
+  width: 100%;
   height: 100vh;
   position: absolute;
-  top: 72px;
-  left: -100%;
+  top: -100%;
+  left: 0;
   transition: all 0.5s ease;
 }
+.dropdown-left.dropdown-transparent {
+  background-color: transparent;
+}
+.dropdown-left.dropdown-transparent .dropdown-left-list .dropdown-left-item {
+  color: white;
+}
 .dropdown-left.dropdown-active {
+  top: 0;
   left: 0;
   transition: all 0.5s ease;
   z-index: 3;
@@ -671,25 +678,20 @@ a {
 .dropdown-left-list {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   gap: 16px;
 }
 .dropdown-left-item {
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 300;
+  font-size: 20px;
   line-height: 120%;
   color: #111111;
 }
-.dropdown-left-item a {
+.dropdown-left-item a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
-  .dropdown-left {
-    display: none;
-  }
-}
 .dropdown-right {
   width: 460px;
   padding: 16px 16px 48px;
@@ -786,6 +788,10 @@ a {
     width: 100%;
   }
 }
+.announcement-bar {
+  position: relative;
+  z-index: 99999;
+}
 .announcement-bar-cont {
   max-width: 100%;
   padding: 10px 24px;
@@ -814,7 +820,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 64px;
+  gap: 120px;
 }
 .footer-bottom {
   display: flex;
@@ -872,7 +878,7 @@ a {
 .footer-links {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 24px;
   width: 50%;
@@ -891,7 +897,7 @@ a {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 32px;
-  width: calc(33% - 12px);
+  width: 50%;
 }
 .footer-links-item {
   font-size: 16px;
@@ -914,11 +920,14 @@ a {
 }
 
 @media (max-width: 768px) {
-  .footer-logo {
-    height: 40px;
+  .footer-cont {
+    gap: 200px;
   }
 }
 @media (max-width: 640px) {
+  .footer {
+    padding: 32px 16px;
+  }
   .footer-top {
     flex-direction: column;
   }
@@ -928,7 +937,23 @@ a {
   }
   .footer-links {
     width: 100%;
+    flex-direction: column;
+    gap: 48px;
     max-width: none;
+  }
+}
+@media (max-width: 480px) {
+  .footer-logo {
+    width: 100%;
+    height: auto;
+  }
+  .footer-copyright-wrapper {
+    border-top: none;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .footer-copyright-wrapper .fs-14 {
+    font-size: 14px;
   }
 }
 .home-section-title {
@@ -1778,35 +1803,55 @@ a {
     padding: 16px;
   }
   .gallery-wrapper {
-    height: 80vh;
     width: 100%;
     position: relative;
   }
   .swiper-product {
     width: 100%;
-    height: 100%;
+    height: 640px;
   }
   .swiper-product img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  .swiper-pagination-bullet {
-    background-color: rgba(255, 255, 255, 0.6);
+  .swiper-thumbs {
+    margin-top: 8px;
+    height: 160px;
+    max-width: 100%;
   }
-  .swiper-pagination-bullet-active {
-    background-color: #fff;
+  .swiper-thumbs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    display: none;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    padding: 8px;
+    width: 36px;
+    height: 36px;
+    background-color: #ffffff;
+    border-radius: 100%;
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.05));
   }
 }
 @media (max-width: 480px) {
-  .product-main .gallery-wrapper {
-    height: 60vh;
-  }
   .product-main-slider {
-    padding: 0;
+    padding: 32px 16px 16px;
   }
   .product-main-content {
-    padding-top: 32px;
+    padding-top: 0px;
+  }
+  .product-main .swiper-product {
+    height: 360px;
+  }
+  .product-main .swiper-thumbs {
+    height: 103px;
   }
 }
 .product-variant {
@@ -1833,6 +1878,7 @@ a {
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
+  flex-wrap: wrap;
 }
 .product-variant-size-item {
   display: flex;

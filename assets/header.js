@@ -33,9 +33,8 @@ searchTrigger.addEventListener('click', () => {
 
 navMenuTrigger.forEach((btn) => {
   btn.addEventListener('click', () => {
-    navMenuWrapper.classList.add('menu-active');
-    navOverlay.classList.add('show-transparent');
-    navbarCont.style.zIndex = 999;
+    shopMenu.classList.toggle('dropdown-active');
+    navOverlay.classList.toggle('show');
   });
 })
 navMenuClose.addEventListener('click', (e) => {
@@ -58,6 +57,12 @@ searchMenu.addEventListener('click', (e) => {
   e.stopPropagation();
 })
 shopMenu.addEventListener('click', (e) => {
+  shopMenu.classList.remove('dropdown-active');
+  navOverlay.classList.remove('show');
+  navOverlay.classList.remove('show-transparent');
+  searchMenu.classList.remove('dropdown-active');
+  navMenuWrapper.classList.remove('menu-active');
+  navbarCont.style.zIndex = 9;
   e.stopPropagation();
 })
 // searchMenu.addEventListener('mouseleave', () => {

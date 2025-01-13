@@ -53,24 +53,13 @@
       </div>
       <div class="footer-links-list-wrapper">
         <span class="txt-500 fs-16 cl-white">{{ section.settings.group_two_title }}</span>
-        <ul class="footer-links-list">
-          {% for link in linklists['main-menu'].links %}
-            <li class="footer-links-item">
-              <a href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
+        <li class="footer-links-item">
+          <span>{{ section.settings.contact_email }}</span>
+          <br>
+          <span>{{ section.settings.contact_phone }}</span>
+        </li>
       </div>
-      <div class="footer-links-list-wrapper">
-        <span class="txt-500 fs-16 cl-white">{{ section.settings.group_three_title }}</span>
-        <ul class="footer-links-list">
-          {% for link in linklists['main-menu'].links %}
-            <li class="footer-links-item">
-              <a href="{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
+
     </div>
   </div>
   <div class="footer-bottom">
@@ -132,7 +121,7 @@
         "type": "textarea",
         "id": "newsletter_description",
         "label": "Newsletter Description",
-        "default": "Join the inner Circle for exclusive updates, early access to new drops, and members-only offers."
+        "default": "Sign up to our newsletter to receive exclusive offers."
       },
       {
         "type": "text",
@@ -151,6 +140,18 @@
         "id": "group_three_title",
         "label": "Group Three Title",
         "default": "Social"
+      },
+      {
+        "type": "text",
+        "id": "contact_email",
+        "label": "Contact Email",
+        "default": "E. contact@auto-nomie.com"
+      },
+      {
+        "type": "text",
+        "id": "contact_phone",
+        "label": "Contact Phone",
+        "default": "M. +971 54 281 6619"
       }
     ],
     "blocks": [

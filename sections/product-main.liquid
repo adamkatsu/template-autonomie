@@ -15,7 +15,25 @@
             </div>
           {% endfor %}
         </div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.34171 15.6485C6.8861 15.1799 6.8861 14.4201 7.34171 13.9515L11.1834 10L7.34171 6.04853C6.8861 5.5799 6.8861 4.8201 7.34171 4.35147C7.79732 3.88284 8.53601 3.88284 8.99162 4.35147L13.6583 9.15147C14.1139 9.6201 14.1139 10.3799 13.6583 10.8485L8.99162 15.6485C8.53601 16.1172 7.79732 16.1172 7.34171 15.6485Z" fill="#0F172A"/>
+          </svg>
+        </div>
+        <div class="swiper-button-prev">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.6583 15.6485C13.1139 15.1799 13.1139 14.4201 12.6583 13.9515L8.81658 10L12.6583 6.04853C13.1139 5.5799 13.1139 4.8201 12.6583 4.35147C12.2027 3.88284 11.464 3.88284 11.0084 4.35147L6.34171 9.15147C5.8861 9.6201 5.8861 10.3799 6.34171 10.8485L11.0084 15.6485C11.464 16.1172 12.2027 16.1172 12.6583 15.6485Z" fill="#0F172A"/>
+          </svg>
+        </div>
+      </div>
+      <div class="swiper swiper-thumbs">
+        <div class="swiper-wrapper swiper-wrapper-thumbs">
+          {% for image in product.images %}
+            <div class="swiper-slide swiper-slide-thumbs">
+              <img src="{{ image | image_url: width: 1024 }}" alt="">
+            </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
@@ -267,15 +285,26 @@
 
 <!-- Initialize Swiper -->
 <script>
+  var swiperThumbs = new Swiper(".swiper-thumbs", {
+    loop: true,
+    spaceBetween: 8,
+    slidesPerView: 3,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
   var swiper = new Swiper(".swiper-product", {
     spaceBetween: 16,
-    pagination: {
-      el: ".swiper-pagination",
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
     autoplay: {
       delay: 5000,
     },
-    loop: true
+    loop: true,
+    thumbs: {
+      swiper: swiperThumbs,
+    },
   });
 </script>
 
