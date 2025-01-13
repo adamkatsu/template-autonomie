@@ -32,6 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
   filterHide.addEventListener('click', () => {
     filterPopup.classList.remove('popup-active');
   })
+  filterPopup.addEventListener('click', () => {
+    filterPopup.classList.remove('popup-active');
+  })
+  document.querySelector('.collection-popup-filter').addEventListener('click', (e) => {
+    e.stopPropagation();
+  })
 
 
   // Show More Filters
